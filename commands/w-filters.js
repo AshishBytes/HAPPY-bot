@@ -17,7 +17,7 @@ exports.run = async (client, message) => {
     message.channel.send({
         embed: {
             color: 'ORANGE',
-            footer: { text: 'This bot uses a Github project made by Zerio (ZerioDev/Music-bot)' },
+            footer: { text: 'HAPPY' },
             fields: [
                 { name: 'Filters', value: filtersStatuses[0].join('\n'), inline: true },
                 { name: '** **', value: filtersStatuses[1].join('\n'), inline: true },
