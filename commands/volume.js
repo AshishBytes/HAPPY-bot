@@ -4,7 +4,7 @@ exports.run = async (client, message, args) => {
 
     if (!client.player.getQueue(message)) return message.channel.send(`${client.emotes.error} - No music currently playing !`);
 
-    if (!args[0]) return message.channel.send(`${client.emotes.error} - Please enter a number !`);
+    if (!args[0]) return message.channel.send(`${client.emotes.error} - command shutdown`);
 
     if (isNaN(args[0]) || 100 < args[0] || args[0] <= 0) return message.channel.send(`${client.emotes.error} - Please enter a valid number (between 1 and 100) !`);
 
