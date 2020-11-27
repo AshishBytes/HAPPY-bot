@@ -1,13 +1,5 @@
-module.exports = (client, message, query, tracks) => {
+module.exports = (client, message, track) => {
 
-    message.channel.send({
-        embed: {
-            color: 'AQUA',
-            author: { name: `Here are your search results for ${query}` },
-            footer: { text: 'HAPPY' },
-            timestamp: new Date(),
-            description: `${client.emotes.music} - Now playing ${track.title} into ${message.member.voice.channel} ...`,
-        },
-    });
+    message.channel.send(`${client.emotes.music} - Now playing ${track.link} into ${message.member.voice.channel} ...`);
 
 };
