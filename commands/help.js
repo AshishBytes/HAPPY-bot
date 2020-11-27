@@ -7,7 +7,7 @@ exports.run = async (client, message) => {
             footer: { text: 'HAPPY' },
             fields: [
                 { name: 'Bot', value: '`ping`' },
-                { name: 'Music', value: '`play`, `pause`, `resume`, `queue`, `clear-queue`, `shuffle`, `np`, `loop`, `volume`, `skip`, `stop`, `leave`, `left`, `filter`, `enable-filters`' },
+                { name: 'Music', value: '`play`, `pause`, `resume`, `queue`, `clear-queue`, `shuffle`, `np`, `loop`, `volume`, `skip`, `[stop/left/leave]`, `filter`, `enable-filters`' },
                 { name: 'Filters', value: '`bassboost`, `8D`, `vaporwave`, `nightcore`, `phaser`, `tremolo`, `vibrato`, `reverse`, `treble`, `normalizer`, `surrounding`, `pulsator`, `subboost`, `karaoke`, `flanger`, `gate`, `haas`, `mcompand`' },
             ],
             timestamp: new Date(),
