@@ -2,7 +2,7 @@ exports.run = async (client, message) => {
 
     message.channel.send({
         embed: {
-            color: 'ORANGE',
+            color: 'AQUA',
             author: { name: 'Help pannel' },
             footer: { text: 'HAPPY' },
             fields: [
