@@ -1,5 +1,5 @@
 {
-    "game": ".help lol",
-    "prefix": ".",
-    "token_bot": "NzA4OTI1MDA0OTQyNjcxOTYy.Xreb3A.USJmFXrS6Ah3ZumtAP5x3tVrD_c"
+    "game": "/help",
+    "prefix": "/",
+    "token_bot": "NzIyNzkwNDcyMjc5NTIzMzM5.XuoNFQ.J5VmxX4_FYcLA8PUJD4ikcLHjqs"
 }
