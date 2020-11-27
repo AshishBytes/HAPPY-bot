@@ -4,7 +4,7 @@ exports.run = async (client, message) => {
         embed: {
             color: 'ORANGE',
             author: { name: 'Help pannel' },
-            footer: { text: 'This bot uses a Github project made by Zerio (ZerioDev/Music-bot)' },
+            footer: { text: 'HAPPY' },
             fields: [
                 { name: 'Bot', value: '`ping`' },
                 { name: 'Music', value: '`play`, `pause`, `resume`, `queue`, `clear-queue`, `shuffle`, `np`, `loop`, `volume`, `skip`, `stop`, `filter`, `w-filters`' },
