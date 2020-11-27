@@ -6,7 +6,7 @@ module.exports = (client, message, query, tracks) => {
             author: { name: `Here are your search results for ${query}` },
             footer: { text: 'HAPPY' },
             timestamp: new Date(),
-            description: `${client.emotes.music} - Now playing ${track.title} into ${message.member.voice.channel} ...}`,
+            description: `${client.emotes.music} - Now playing ${track.title} into ${message.member.voice.channel} ...`,
         },
     });
 
