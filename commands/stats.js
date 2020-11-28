@@ -5,9 +5,6 @@ bot.on("message', message => {
     if (message.author.id) return; //ignore bots 
 const embed = new Discord.RichEmbed()
 .setDescription(`
-**NAME**
-${client.name} 
-
 **UPTIME**
 ${ms(client.uptime)}
 
@@ -25,12 +22,6 @@ ${client.guilds.cache.size}
 
 **CHANNELS**
 ${client.channels.cache.size}
-
-**DISCORD JS VERSION**
-v${version}
-
-**NODE JS VERSION**
-${process.version}
 
 **CPU USAGE**
 ${Math.round('stats.cpu')}
