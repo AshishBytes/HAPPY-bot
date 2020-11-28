@@ -1,4 +1,3 @@
-const timeParser  = require('../../util/timeParser.js');
 const { version } = require('../../package.json');
 
 exports.run = async function ({ client, msg }) {
@@ -7,7 +6,7 @@ exports.run = async function ({ client, msg }) {
 
     msg.channel.createMessage({ embed: {
         color: client.config.options.embedColour,
-        title: `JukeBot v${version}`,
+        title: `HAPPY v${version}`,
         description: 'Created by Kromatic#0420',
         fields: [
             { name: 'Uptime',		  value: timeParser.formatSeconds(process.uptime()),						inline: true },
