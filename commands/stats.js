@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const cpu = require('pidusage');
   cpu(process.pid, async (stats, err) => {
-token_bot.on("message', message => {
+bot.on("message', message => {
     if (message.author.id) return; //ignore bots 
 const embed = new Discord.RichEmbed()
 .setDescription(`
