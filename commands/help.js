@@ -10,7 +10,7 @@ exports.run = async (client, message) => {
                 { name: 'Filters', value: '`bassboost`, `8D`, `vaporwave`, `nightcore`, `phaser`, `tremolo`, `vibrato`, `reverse`, `treble`, `normalizer`, `surrounding`, `pulsator`, `subboost`, `karaoke`, `flanger`, `gate`, `haas`, `mcompand`' },
 				{ name: 'Modration', value: '`purge`,`clear`,`ban`,`kick`,`warn`,`addrole`,`mute`,' },
 			    { name: 'Info', value: '`info`,`serverinfo`,`userinfo`,' },
-				{ name: 'Support', value: '`server`,`vote`,`invite`,' },
+				{ name: 'Support', value: '`support`,`server`,`vote`,`invite`,' },
 				{ name: 'Other', value: '`createinvite`,`ping`,' },
             ],
             timestamp: new Date(),
