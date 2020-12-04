@@ -36,7 +36,7 @@ exports.run = (client, message, args) =>{
     let serverembed = new Discord.MessageEmbed()
         .setColor("#00FFFF")
         .setAuthor(`RaptorSA`, client.user.displayAvatarURL)
-        .addField(`Version`,`5.0`, true)
+        .addField(`Version`,`2.3.9`, true)
         .addField(`Library`,`Discord.js` , true)
         .addField(`Creator`,`HAPPY#7131`, true)
         .addField(`Servers`, `${servers}`, true)
