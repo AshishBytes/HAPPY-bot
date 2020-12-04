@@ -6,12 +6,15 @@ exports.run = async (client, message) => {
             author: { name: 'COMMANDS' },
             footer: { text: 'HAPPY' },
             fields: [
-                { name: 'Bot', value: '`ping`' },
-                { name: 'Music', value: '`play`, `pause`, `resume`, `queue`, `clear-queue/cq`, `shuffle`, `np`, `loop`, `volume`, `skip`, `stop/left/leave`, `filter`, `filters`, `enable-filters`' },
+                { name: 'Music', value: '`play`,`join`,`dc`,`pause`, `resume`, `queue`, `clear-queue/cq`, `shuffle`, `np`, `loop`, `volume`, `skip`, `stop/left/leave`, `filter`, `filters`, `enable-filters`' },
                 { name: 'Filters', value: '`bassboost`, `8D`, `vaporwave`, `nightcore`, `phaser`, `tremolo`, `vibrato`, `reverse`, `treble`, `normalizer`, `surrounding`, `pulsator`, `subboost`, `karaoke`, `flanger`, `gate`, `haas`, `mcompand`' },
+				{ name: 'Modration', value: '`purge`,`clear`,`ban`,`kick`,`warn`,`addrole`,`mute`,' },
+			    { name: 'Info', value: '`info`,`serverinfo`,`userinfo`,' },
+				{ name: 'Support', value: '`server`,`vote`,`invite`,' },
+				{ name: 'Other', value: '`createinvite`,`ping`,' },
             ],
             timestamp: new Date(),
-            description: `To use filters,  ${client.config.prefix}filter (filter_name). Example : ${client.config.prefix}filter 8D.`,
+            description: `MUSIC & MODRATION`,
         },
     });
 
