@@ -8,5 +8,4 @@ const Discord = require('discord.js');
         .setFooter(`Uptime: ${uptime}`);
 
     message.channel.send(serverembed);    
-
 }
