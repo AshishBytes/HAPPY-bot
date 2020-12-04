@@ -29,7 +29,7 @@ exports.run = (client, message, args) =>{
     let sicon = message.guild.iconURL;
     let serverembed = new Discord.MessageEmbed()
         .setAuthor(`${message.guild.name} - Informations`, message.guild.iconURL)
-        .setColor("#15f153")
+        .setColor("#00FFFF")
         .addField('Server owner', message.guild.owner, true)
         .addField('Server region', message.guild.region, true)
         .setThumbnail(sicon)
