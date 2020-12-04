@@ -41,7 +41,7 @@ exports.run = (client, message, args) =>{
         .addField(`Creator`,`HAPPY#7131`, true)
         .addField(`Servers`, `${servers}`, true)
         .addField(`Users`, `${users}`, true)
-        .addField(`Invite`, `[Invite RaptorSA](https://top.gg/bot/722790472279523339/invite)`, true)
+        .addField(`Invite`, `[Invite Me](https://top.gg/bot/722790472279523339/invite)`, true)
         .setFooter(`Uptime: ${uptime}`);
 
     message.channel.send(serverembed);    
