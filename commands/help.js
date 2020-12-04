@@ -11,7 +11,6 @@ exports.run = async (client, message) => {
                 { name: 'Modration', value: '`purge`,`clear`,`ban`,`kick`,' },
 	        { name: 'Info', value: '`info`,`serverinfo`,`userinfo`,' },
 		{ name: 'Support', value: '`support`,`server`,`vote`,`invite`,' },
-		{ name: 'stats', value: '`stats`,' },
 		{ name: 'Other', value: '`createinvite`,`ping`,' },
             ],
             timestamp: new Date(),
