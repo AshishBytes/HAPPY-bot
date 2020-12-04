@@ -1,4 +1,5 @@
 const Discord = require('discord.js');
+exports.run = (client, message, args) =>{
     let serverembed = new Discord.MessageEmbed()
         .setColor("#00FFFF")
         .addField(`Servers`, `${servers}`, true)
@@ -8,4 +9,5 @@ const Discord = require('discord.js');
         .setFooter(`Uptime: ${uptime}`);
 
     message.channel.send(serverembed);    
+
 }
