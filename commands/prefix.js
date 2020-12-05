@@ -1,25 +1,39 @@
-const Discord = require("discord.js");
-const fs = require("fs");
+const prefixModel = require("../models/prefix")
 
-exports.run = async (client, msg, args) => {
-  if(!msg.member.hasPermission("MANAGE_GUILD")) return msg.channel.send("You don't have permissions to set prefix!");
-  if(!args[0]) return msg.channel.send("Please specify a prefix!");
-  
-  let crafty = JSON.parse(fs.readFileSync("./prefixes.json", "utf8"));
-  crafty[msg.guild.id] = {
-    prefix: args[0]
-  }
-  
-  fs.writeFile("./prefixes.json", JSON.stringify(crafty), (err) => {
-     if(err) console.log(err);
-  })
-  
-  msg.channel.send(`Prefix has been set to ${args[0]}`);
-}//w ada nih project sky craft :V // buat apaan? :V
-//w soalny disuruh jaga dia kgk on sampe 4 bln an//pantes w spam pake bot pun ga dijawab,//gmn loop ne nih?
-exports.conf = {
-  aliases: ['prf']
+module.exports.run = async (bot, message, args) => {
+    const data = await prefixModel.findOne({
+        GuildID: message.guild.id
+    });
+
+    if (!args[0]) return message.channel.send('You must provide a **new prefix**!');
+
+    if (args[0].length > 5) return message.channel.send('Your new prefix must be under \`5\` characters!')
+
+    if (data) {
+        await prefixModel.findOneAndRemove({
+            GuildID: message.guild.id
+        })
+        
+        message.channel.send(`The new prefix is now **\`${args[0]}\`**`);
+
+        let newData = new prefixModel({
+            Prefix: args[0],
+            GuildID: message.guild.id
+        })
+        newData.save();
+    } else if (!data) {
+        message.channel.send(`The new prefix is now **\`${args[0]}\`**`);
+
+        let newData = new prefixModel({
+            Prefix: args[0],
+            GuildID: message.guild.id
+        })
+        newData.save();
+    }
+
 }
-exports.help = {
-  name: 'prefix'
+
+module.exports.config = {
+    name: "setprefix",
+    aliases: []
 }
