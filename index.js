@@ -1,46 +1,50 @@
-const fs = require('fs');
-const discord = require('discord.js');
-
-const client = new discord.Client({ disableMentions: 'everyone' });
-
-const { Player } = require('discord-player');
-
-const player = new Player(client);
-client.player = player;
-client.config = require('./config/bot.json');
-client.emotes = require('./config/emojis.json');
-client.filters = require('./config/filters.json');
-client.commands = new discord.Collection();
-
-fs.readdir('./events/', (err, files) => {
-    if (err) return console.error(err);
-    files.forEach(file => {
-        const event = require(`./events/${file}`);
-        let eventName = file.split(".")[0];
-        console.log(`Loading event ${eventName}`);
-        client.on(eventName, event.bind(null, client));
-    });
+const Discord = require('discord.js');
+const client = new Discord.Client({
+    partials: ['MESSAGE', 'CHANNEL', 'REACTION']
 });
+const {
+    loadCommands
+} = require('./utils/loadCommands');
+const mongoose = require('mongoose');
+//Make sure to require this model in your message event or index.js if you use message event on there. in this case im going to require it here
+const prefix = require('./models/prefix');
 
-fs.readdir('./player-events/', (err, files) => {
-    if (err) return console.error(err);
-    files.forEach(file => {
-        const event = require(`./player-events/${file}`);
-        let eventName = file.split(".")[0];
-        console.log(`Loading player event ${eventName}`);
-        client.player.on(eventName, event.bind(null, client));
-    });
+mongoose.connect('MONGODB_URL', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
 });
+client.login("NzE4MzgxNDcwODEyNzMzNDk0.XtoC4Q.lfLFQKDH9cJUCPdFMAzkdOU-VTg");
 
-fs.readdir('./commands/', (err, files) => {
-    if (err) return console.error(err);
-    files.forEach(file => {
-        if (!file.endsWith(".js")) return;
-        let props = require(`./commands/${file}`);
-        let commandName = file.split(".")[0];
-        console.log(`Loading command ${commandName}`);
-        client.commands.set(commandName, props);
+client.commands = new Discord.Collection();
+client.aliases = new Discord.Collection();
+
+loadCommands(client);
+
+client.on('message', async (message) => {
+    if (message.author.bot) return;
+
+    //Getting the data from the model
+    const data = await prefix.findOne({
+        GuildID: message.guild.id
     });
-});
 
-client.login(client.config.token_bot);
+    const messageArray = message.content.split(' ');
+    const cmd = messageArray[0];
+    const args = messageArray.slice(1);
+
+    //If there was a data, use the database prefix BUT if there is no data, use the default prefix which you have to set!
+    if(data) {
+        const prefix = data.Prefix;
+
+        if (!message.content.startsWith(prefix)) return;
+        const commandfile = client.commands.get(cmd.slice(prefix.length)) || bot.commands.get(bot.aliases.get(cmd.slice(prefix.length)));
+        commandfile.run(client, message, args);
+    } else if (!data) {
+        //set the default prefix here
+        const prefix = "!";
+        
+        if (!message.content.startsWith(prefix)) return;
+        const commandfile = client.commands.get(cmd.slice(prefix.length)) || bot.commands.get(bot.aliases.get(cmd.slice(prefix.length)));
+        commandfile.run(client, message, args);
+    }
+})
