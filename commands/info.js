@@ -35,13 +35,27 @@ exports.run = (client, message, args) =>{
 
     let serverembed = new Discord.MessageEmbed()
         .setColor("#00FFFF")
-        .setAuthor(`RaptorSA`, client.user.displayAvatarURL)
+        .setThumbnail(client.user.avatarURL({ format: 'png', dynamic: true, size: 2048 }))
+        .setURL(client.user.avatarURL({ format: 'png', dynamic: true, size: 2048 }))
+        .setTimestamp()
+        .addField("Cryptonix X Ver.Rewrite", "Show the bot's stats.")
+        .addField("-------------------------------------------------------------------------------","----------------------------------------------------------------------------")
+
         .addField(`Version`,`2.3.9`, true)
         .addField(`Library`,`Discord.js` , true)
         .addField(`Creator`,`HAPPY#7131`, true)
         .addField(`Servers`, `${servers}`, true)
         .addField(`Users`, `${users}`, true)
         .addField(`Invite`, `[Invite Me](https://top.gg/bot/722790472279523339/invite)`, true)
+        .addField("-------------------------------------------------------------------------------","----------------------------------------------------------------------------")
+        .addField("Platform", osutils.platform(),true)
+        .addField("VPS CPU Cores", osutils.cpuCount() + " Cores",true)
+        .addField("CPU Usage", `${(v * 100).toString().split(".")[0] + "." + (v * 100).toString().split(".")[1].split('')[0] + (v * 100).toString().split(".")[1].split('')[1]}%`,true)
+        .addField("Total Memory", osutils.totalmem().toString().split(".")[0] + "." + osutils.totalmem().toString().split(".")[1].split('')[0] + osutils.totalmem().toString().split(".")[1].split('')[1] + "MB",true)
+        .addField("RAM Usage Of VPS", `${(osutils.totalmem() - osutils.freemem()).toString().split(".")[0] + "." + ( osutils.totalmem() - osutils.freemem()).toString().split(".")[1].split('')[0] + (osutils.totalmem() - osutils.freemem()).toString().split(".")[1].split('')[1]}/${osutils.totalmem().toString().split(".")[0] + "." + osutils.totalmem().toString().split(".")[1].split('')[0] + osutils.totalmem().toString().split(".")[1].split('')[1]}MB`,true)
+        .addField("RAM Usage Of Bot", (process.memoryUsage().heapUsed / 1024 / 1024 ).toFixed(2) + "MB/" + osutils.totalmem().toString().split(".")[0] + "." + osutils.totalmem().toString().split(".")[1].split('')[0] + osutils.totalmem().toString().split(".")[1].split('')[1] + "MB",true)
+        .addField("RAM Usage Of VPS %", `${(100 - osutils.freememPercentage() * 100).toString().split(".")[0] + "." + (100 - osutils.freememPercentage() * 100).toString().split(".")[1].split('')[0] + (100 - osutils.freememPercentage() * 100).toString().split(".")[1].split('')[1]}%`,true)
+        .addField("Ping", Math.round(client.ws.ping) + "ms", true)
         .setFooter(`Uptime: ${uptime}`);
 
     message.channel.send(serverembed);    
