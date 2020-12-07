@@ -4,7 +4,7 @@ exports.run = (client, message, args) =>{
         .setColor("#00FFFF")
         .addField(`Invite`, `[Invite Link](https://top.gg/bot/722790472279523339/invite)`, true)
 	    .addField(`Vote`, `[Vote Link](https://top.gg/bot/722790472279523339/vote)`, true)
-	    .addField(`Server`, `[Server Link](currently nothing)`, true)
+	    .addField(`Server`, `[Server Link](https://discord.gg/qZuGW4f6yv)`, true)
         .setFooter(`HAPPY`);
 
     message.channel.send(serverembed);    
