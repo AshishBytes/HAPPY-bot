@@ -1,5 +1,5 @@
 module.exports = (client, message) => {
-
+    if (!message.guild) return 
     if (message.author.bot) return;
 
     const prefix = client.config.prefix;
