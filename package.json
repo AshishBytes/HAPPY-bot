@@ -7,13 +7,11 @@
   "license": "MIT",
   "dependencies": {
     "@discordjs/opus": "^0.3.3",
-    "discord-ytdl-core": "^4.1.5",
-    "opusscript": "^0.0.7",
-    "quick.db": "^7.1.3",
     "discord-player": "^3.0.3",
     "discord.js": "^12.5.1",
     "pidusage": "^2.0.21",
     "moment": "^2.29.1",
-    "os-utils": "0.0.14"
+    "os-utils": "0.0.14",
+    "ffmpeg-static": "^4.2.7"
   }
 }
