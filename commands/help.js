@@ -8,7 +8,7 @@ exports.run = async (client, message) => {
             fields: [
                 { name: 'Music', value: '`play`,`join`,`dc`,`pause`, `resume`, `queue`, `clear-queue/cq`, `shuffle`, `np`, `loop`, `volume`, `skip`, `stop/left/leave`, `filter`, `filters`, `enable-filters`' },
                 { name: 'Filters', value: '`bassboost`, `8D`, `vaporwave`, `nightcore`, `phaser`, `tremolo`, `vibrato`, `reverse`, `treble`, `normalizer`, `surrounding`, `pulsator`, `subboost`, `karaoke`, `flanger`, `gate`, `haas`, `mcompand`' },
-                { name: 'Modration', value: '`purge`,`clear`,`ban`,`kick`,' },
+                { name: 'Moderation', value: '`purge`,`clear`,`ban`,`kick`,' },
 	        { name: 'Info', value: '`info`,`serverinfo`,`userinfo`,' },
 		{ name: 'Support', value: '`support`,`server`,`vote`,`invite`,' },
 		{ name: 'Other', value: '`createinvite`,`ping`,' },
