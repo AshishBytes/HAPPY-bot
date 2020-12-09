@@ -32,6 +32,7 @@ fs.readdir('./player-events/', (err, files) => {
     });
 });
 
+
 fs.readdir('./commands/', (err, files) => {
     if (err) return console.error(err);
     files.forEach(file => {
@@ -42,6 +43,74 @@ fs.readdir('./commands/', (err, files) => {
         client.commands.set(commandName, props);
     });
 });
+
+fs.readdir('./commands/info/', (err, files) => {
+    if (err) return console.error(err);
+    files.forEach(file => {
+        if (!file.endsWith(".js")) return;
+        let props = require(`./commands/info/${file}`);
+        let commandName = file.split(".")[0];
+        console.log(`Loading command ${commandName}`);
+        client.commands.set(commandName, props);
+    });
+});
+
+fs.readdir('./commands/moderation/', (err, files) => {
+    if (err) return console.error(err);
+    files.forEach(file => {
+        if (!file.endsWith(".js")) return;
+        let props = require(`./commands/moderation/${file}`);
+        let commandName = file.split(".")[0];
+        console.log(`Loading command ${commandName}`);
+        client.commands.set(commandName, props);
+    });
+}); 
+
+fs.readdir('./commands/music/', (err, files) => {
+    if (err) return console.error(err);
+    files.forEach(file => {
+        if (!file.endsWith(".js")) return;
+        let props = require(`./commands/music/${file}`);
+        let commandName = file.split(".")[0];
+        console.log(`Loading command ${commandName}`);
+        client.commands.set(commandName, props);
+    });
+});
+
+fs.readdir('./commands/other/', (err, files) => {
+    if (err) return console.error(err);
+    files.forEach(file => {
+        if (!file.endsWith(".js")) return;
+        let props = require(`./commands/other/${file}`);
+        let commandName = file.split(".")[0];
+        console.log(`Loading command ${commandName}`);
+        client.commands.set(commandName, props);
+    });
+});
+
+fs.readdir('./commands/support/', (err, files) => {
+    if (err) return console.error(err);
+    files.forEach(file => {
+        if (!file.endsWith(".js")) return;
+        let props = require(`./commands/support/${file}`);
+        let commandName = file.split(".")[0];
+        console.log(`Loading command ${commandName}`);
+        client.commands.set(commandName, props);
+    });
+});
+
+fs.readdir('./commands/test/', (err, files) => {
+    if (err) return console.error(err);
+    files.forEach(file => {
+        if (!file.endsWith(".js")) return;
+        let props = require(`./commands/test/${file}`);
+        let commandName = file.split(".")[0];
+        console.log(`Loading command ${commandName}`);
+        client.commands.set(commandName, props);
+    });
+});
+
+
 client.on('message', async message => {
 if(message.content.match(new RegExp(`${client.user.id}`))) 
 return message.channel.send("Don't ping me little shit")
