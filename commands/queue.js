@@ -11,7 +11,3 @@ exports.run = async (client, message) => {
     }).slice(0, 5).join('\n') + `\n\n${queue.tracks.length > 5 ? `And **${queue.tracks.length - 5}** other songs...` : `In the playlist **${queue.tracks.length}** song(s)...`}`));
 
 };
-module.exports.config = {
-    name: "queue", //name
-    aliases: ["q,queue"] //aliases
-}
