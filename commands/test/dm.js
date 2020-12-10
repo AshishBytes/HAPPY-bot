@@ -1,22 +1,5 @@
 	const Discord = require("discord.js");
 
-class ServersList extends command {
-
-	constructor (client) {
-		super(client, {
-			name: "dm",
-			dirname: __dirname,
-			enabled: true,
-			guildOnly: false,
-			aliases: [ "dmowner" ],
-			memberPermissions: [],
-			botPermissions: [ "SEND_MESSAGES", "EMBED_LINKS" ],
-			nsfw: false,
-			ownerOnly: true,
-			cooldown: 5000
-		});
-	}
-
 	async run (message, args, data) {
         
 		await message.delete();
