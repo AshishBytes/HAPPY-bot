@@ -10,8 +10,6 @@ const Player = new Player(client, {
 	leaveOnEmpty: false,
     quality: 'high',
 });
-
-const player = new Player(client);
 client.player = player;
 client.config = require('./config/bot.json');
 client.emotes = require('./config/emojis.json');
