@@ -6,7 +6,7 @@ exports.run = async (client, message) => {
             author: { name: 'COMMANDS' },
             footer: { text: 'HAPPY' },
             fields: [
-                { name: 'Music', value: '`play`,`join`,`dc`,`pause`, `resume`, `queue`, `clear-queue/cq`, `shuffle`, `np`, `loop`, `volume`, `skip`, `stop/left/leave`, `filter`, `filters`, `enable-filters`' },
+                { name: 'Music', value: '`play`,`join`,`pause`, `resume`, `queue`, `clear-queue/cq`, `shuffle`, `np`, `loop`, `volume`, `skip`, `stop/left/leave`, `filter`, `filters`, `enable-filters`' },
                 { name: 'Filters', value: '`bassboost`, `8D`, `vaporwave`, `nightcore`, `phaser`, `tremolo`, `vibrato`, `reverse`, `treble`, `normalizer`, `surrounding`, `pulsator`, `subboost`, `karaoke`, `flanger`, `gate`, `haas`, `mcompand`' },
                 { name: 'Moderation', value: '`purge`,`clear`,`ban`,`kick`' },
 	        { name: 'Info', value: '`help`,`info`,`serverinfo`,`userinfo`,`uptime`' },
