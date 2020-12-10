@@ -16,6 +16,7 @@ client.config = require('./config/bot.json');
 client.emotes = require('./config/emojis.json');
 client.filters = require('./config/filters.json');
 client.commands = new discord.Collection();
+client.aliases = new discord.Collection();
 
 fs.readdir('./events/', (err, files) => {
     if (err) return console.error(err);
