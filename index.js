@@ -3,12 +3,6 @@ const discord = require('discord.js');
 
 const client = new discord.Client({ disableMentions: 'everyone' });
 
-const ytdl = require('ytdl-core-discord');
- 
-async function play(connection, url) {
-  connection.play(await ytdl(url), { type: 'opus' });
-}
-
 const { Player } = require('discord-player');
 
 const player = new Player(client, {
