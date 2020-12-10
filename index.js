@@ -9,7 +9,7 @@ const player = new Player(client, {
 	leaveOnEnd: false,
 	leaveOnStop: true,
 	leaveOnEmpty: false,
-    quality: 'low',
+    quality: 'high',
 });
 client.player = player;
 client.config = require('./config/bot.json');
