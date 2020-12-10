@@ -1,6 +1,6 @@
 	const Discord = require("discord.js");
 
-class ServersList extends Command {
+class ServersList extends command {
 
 	constructor (client) {
 		super(client, {
