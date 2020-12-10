@@ -5,7 +5,7 @@ const client = new discord.Client({ disableMentions: 'everyone' });
 
 const { Player } = require('discord-player');
 const player = new Player(client, {
-    leaveOnEnd: false,
+        leaveOnEnd: false,
 	leaveOnStop: false,
 	leaveOnEmpty: false,
     quality: 'high',
