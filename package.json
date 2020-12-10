@@ -13,6 +13,6 @@
     "moment": "^2.29.1",
     "os-utils": "0.0.14",
     "ffmpeg-static": "^4.2.7",
-    "ytdl-core-discord": "^1.2.4"
+    "ytdl-core": "^4.1.4"
   }
 }
