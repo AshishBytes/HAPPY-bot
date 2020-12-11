@@ -46,7 +46,7 @@ exports.run = (client, message, args) =>{
         .addField(`Library`,`Discord.js` , true)
         .addField(`Creator`,`HAPPY#7131`, true)
         .addField(`Servers`, `${servers}`, true)
-        .addField(`Users`, `${users}`, true)
+        .addField(`Users`, `${client.guilds.cache.reduce((a, b) => a + b.memberCount, 0).toLocaleString()}`, true)
         .addField(`Invite`, `[Invite Me](https://top.gg/bot/722790472279523339/invite)`, true)
         .addField("-------------------------------------------------------------------------------","----------------------------------------------------------------------------")
         .addField("Platform", osutils.platform(),true)
