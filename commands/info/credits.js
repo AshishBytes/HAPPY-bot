@@ -8,7 +8,8 @@ exports.run = (client, message, args) =>{
         .setTimestamp()
         .addField("HAPPY", "Show the bot's creadits.")
         .addField("-------------------------------------------------------------------------------","----------------------------------------------------------------------------")
-        .setField("BIG THANKS FOR MUSIC")
+    
+        .addField(`THANKS`,`BIG THANKS TO !Zerio.js#2020`, true)
 	.addField(`GITHUB`, `[LINK](https://github.com/ZerioDev/Music-bot)`, true)
 	.addField(`SERVER`, `[LINK](https://discord.gg/DKXWFfCAEE)`, true)
 	.setFooter("HAPPY");
