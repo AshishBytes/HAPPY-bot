@@ -39,7 +39,7 @@ for (const file of music) {
 };
 
 const events = fs.readdirSync('./events').filter(file => file.endsWith('.js'));
-const player = fs.readdirSync('./player-events').filter(file => file.endsWith('.js'));
+const player = fs.readdirSync('./player').filter(file => file.endsWith('.js'));
 
 for (const file of events) {
     console.log(`Loading discord.js event ${file}`);
@@ -49,7 +49,7 @@ for (const file of events) {
 
 for (const file of player) {
     console.log(`Loading discord-player event ${file}`);
-    const event = require(`./player-events/${file}`);
+    const event = require(`./player/${file}`);
     client.player.on(file.split(".")[0], event.bind(null, client));
 };
 
