@@ -11,7 +11,7 @@ exports.run = (client, message, args) =>{
         .setField("BIG THANKS FOR MUSIC")
 	.addField(`GITHUB`, `[LINK](https://github.com/ZerioDev/Music-bot)`, true)
 	.addField(`SERVER`, `[LINK](https://discord.gg/DKXWFfCAEE)`, true)
-	.setFooter("HAPPY")
+	.setFooter("HAPPY");
 
     message.channel.send(serverembed);    
 
