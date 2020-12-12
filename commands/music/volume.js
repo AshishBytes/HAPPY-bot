@@ -1,17 +1,20 @@
-exports.run = async (client, message, args) => {
+module.exports = {
+    name: 'volume',
+    aliases: [],
+    category: 'Music',
+    utilisation: '{prefix}volume [1-100]',
 
-    if (!message.member.voice.channel) return message.channel.send(`${client.emotes.error} - You're not in a voice channel !`);
+    execute(client, message, args) {
+        if (!message.member.voice.channel) return message.channel.send(`${client.emotes.error} - You're not in a voice channel !`);
 
-    if (!client.player.getQueue(message)) return message.channel.send(`${client.emotes.error} - No music currently playing !`);
+        if (!client.player.getQueue(message)) return message.channel.send(`${client.emotes.error} - No music currently playing !`);
 
-    if (!args[0]) return message.channel.send(`${client.emotes.error} - command shutdown`);
+        if (!args[0] || isNaN(args[0])) return message.channel.send(`${client.emotes.error} - Please enter a valid number !`);
 
-    if (isNaN(args[0]) || 100 < args[0] || args[0] <= 0) return message.channel.send(`${client.emotes.error} - Please enter a valid number (between 1 and 100) !`);
+        if (Math.round(parseInt(args[0])) < 1 || Math.round(parseInt(args[0])) > 100) return message.channel.send(`${client.emotes.error} - Please enter a valid number (between 1 and 100) !`);
 
-    if (message.content.includes('-') || message.content.includes('+') || message.content.includes(',') || message.content.includes('.')) return message.channel.send(`${client.emotes.error} - Please enter a valid number !`);
+        client.player.setVolume(message, args[0]);
 
-    client.player.setVolume(message, parseInt(args[0]));
-
-    message.channel.send(`${client.emotes.success} - Volume set to **${args.join(" ")}%** !`);
-
+        message.channel.send(`${client.emotes.success} - Volume set to **${parseInt(args[0])}%** !`);
+    },
 };
