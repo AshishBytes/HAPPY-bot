@@ -18,8 +18,8 @@ client.filters = require('./config/filters.json');
 client.commands = new discord.Collection();
 client.aliases = new discord.Collection();
 
-const core = fs.readdirSync('./commands/moderation').filter(file => file.endsWith('.js'));
-const infos = fs.readdirSync('./commands/info').filter(file => file.endsWith('.js'));
+const moderation = fs.readdirSync('./commands/moderation').filter(file => file.endsWith('.js'));
+const info = fs.readdirSync('./commands/info').filter(file => file.endsWith('.js'));
 const music = fs.readdirSync('./commands/music').filter(file => file.endsWith('.js'));
 
 for (const file of moderatin) {
@@ -41,7 +41,7 @@ for (const file of music) {
 };
 
 const events = fs.readdirSync('./events').filter(file => file.endsWith('.js'));
-const player = fs.readdirSync('./player-events').filter(file => file.endsWith('.js'));
+const player-events = fs.readdirSync('./player-events').filter(file => file.endsWith('.js'));
 
 for (const file of events) {
     console.log(`Loading discord.js event ${file}`);
