@@ -7,8 +7,6 @@ module.exports = function (client) {
     filename: "leveling.js",
     version: "2.0"
   }
-  //log that the module is loaded
-  console.log(` :: ⬜️ Module: ${description.name} | Loaded version ${description.version} from ("${description.filename}")`)
   //voice state update event to check joining/leaving channels
   client.on("message", async (message) => {
 
