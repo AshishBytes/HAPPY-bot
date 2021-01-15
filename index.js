@@ -1,7 +1,8 @@
 const fs = require('fs');
 const discord = require('discord.js');
 const client = new discord.Client({ disableMentions: 'everyone' });
-
+const welcome = require("./welcome");
+welcome(client);
 const { Player } = require('discord-player');
 
 const player = new Player(client, {
