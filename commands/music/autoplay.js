@@ -1,4 +1,4 @@
-const { MusicCommand } = require('../../index');
+const { MusicCommand } = require('../index');
 
 module.exports = class extends MusicCommand {
 
