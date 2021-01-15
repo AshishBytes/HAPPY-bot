@@ -1,5 +1,7 @@
 {
     "game": "/help",
     "prefix": "/",
-    "token_bot": "NzIyNzkwNDcyMjc5NTIzMzM5.XuoNFQ.cHnMnmGqmxiikrzyL4CSX75G5Kc"
+    "token_bot": "NzIyNzkwNDcyMjc5NTIzMzM5.XuoNFQ.cHnMnmGqmxiikrzyL4CSX75G5Kc",
+  "CHANNEL_WELCOME": "787645927946321950",
+  "ROLES_WELCOME": ["",""]
 }
