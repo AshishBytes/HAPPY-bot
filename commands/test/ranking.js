@@ -1,4 +1,4 @@
-const config = require("./config.json");
+const config = require("./config/bot.json");
 const canvacord = require("canvacord");
 const Discord = require("discord.js");
 
