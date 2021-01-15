@@ -2,7 +2,7 @@ const canvacord = require("canvacord");
 const Discord = require("discord.js");
 
   //voice state update event to check joining/leaving channels
-  client.on("message", async (message) => {
+exports.run = (client, message, args) => {
 
     if (message.author.bot) return;
     if (!message.guild) return;
