@@ -1,5 +1,4 @@
 const Discord = require("discord.js");
-const opusscript = require("opusscript");
 
 exports.run = (client, message, args) => {
   
