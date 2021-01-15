@@ -1,6 +1,6 @@
 const fs = require('fs');
 const discord = require('discord.js');
-const leveling = require("./commands/test/ranking.js");         //load the leveling file
+const leveling = require("./ranking");         //load the leveling file
 leveling(client);  //call the leveling file with the client
 const Enmap = require("enmap")                 //load the enmap library
 const client = new discord.Client({ disableMentions: 'everyone' });
