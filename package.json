@@ -17,7 +17,7 @@
     "ffmpeg-static": "^4.2.7",
     "ytdl-core": "^4.1.4",
     "fs": "^0.0.1-security",
-    "canvacord": "^5.0.8"
+    "canvacord": "^5.0.8",
     "enmap": "^5.8.2"
   }
 }
