@@ -1,12 +1,6 @@
 const canvacord = require("canvacord");
 const Discord = require("discord.js");
 
-module.exports = function (client) {
-  const description = {
-    name: "leveling",
-    filename: "leveling.js",
-    version: "2.0"
-  }
   //voice state update event to check joining/leaving channels
   client.on("message", async (message) => {
 
