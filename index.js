@@ -1,5 +1,7 @@
 const fs = require('fs');
 const discord = require('discord.js');
+const ffmpeg = require("ffmpeg-binaries");
+const opusscript = require("opusscript");
 
 const client = new discord.Client({ disableMentions: 'everyone' });
 
