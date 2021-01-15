@@ -1,8 +1,6 @@
 {
   "main": "index.js",
-  "scripts": {
-    "start": "node index.js"
-  },
+},
 "engines": {
   "node": "12.x",
   "npm": "6.x"
@@ -17,7 +15,7 @@
     "ffmpeg-static": "^4.2.7",
     "ytdl-core": "^4.1.4",
     "fs": "^0.0.1-security",
-    "ffmpeg-binaries": "^3.2.2-3",
+    "ffmpeg-binaries": "^4.0.0",
     "opusscript": "0.0.6"
   }
 }
