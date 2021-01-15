@@ -1,6 +1,5 @@
 const fs = require('fs');
 const discord = require('discord.js');
-const Enmap = require("enmap")                 //load the enmap library
 const client = new discord.Client({ disableMentions: 'everyone' });
 
 const { Player } = require('discord-player');
