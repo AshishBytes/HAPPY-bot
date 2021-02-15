@@ -14,6 +14,7 @@ exports.run = async (client, message) => {
     message.channel.send({
         embed: {
             color: 'AQUA',
+            .setTitle("Playing Song!")
             .setDescription(`Song: [\`${song.name}\`](${song.url})`)
             footer: { text: 'HAPPY' },
             fields: [
