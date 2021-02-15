@@ -14,7 +14,7 @@ exports.run = async (client, message) => {
     message.channel.send({
         embed: {
             color: 'AQUA',
-            author: '♪Now playing♪', value: (`[**${track.title}**](${track.url})`) },
+            author: '♪Now playing♪', value: track.title},
             footer: { text: 'HAPPY' },
             fields: [
                 { name: 'Channel', value: track.author, inline: true },
