@@ -47,7 +47,7 @@ exports.run = (client, message, args) =>{
         .addField(`Creator`,`HAPPY#7131`, true)
         .addField(`Servers`, `${servers}`, true)
         .addField(`Users`, `${client.guilds.cache.reduce((a, b) => a + b.memberCount, 0).toLocaleString()}`, true)
-        .addField(`Invite`, `[Invite Me](https://top.gg/bot/722790472279523339/invite)`, true)
+        .addField(`Invite`, `[Invite Me](https://discord.com/api/oauth2/authorize?client_id=810825174990454794&permissions=37092672&scope=bot)`, true)
         .addField("-------------------------------------------------------------------------------","----------------------------------------------------------------------------")
         .addField("Platform", osutils.platform(),true)
         .addField("VPS CPU Cores", osutils.cpuCount() + " Cores",true)
