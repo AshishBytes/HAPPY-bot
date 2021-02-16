@@ -30,7 +30,7 @@ exports.run = (client, message, args) =>{
     let serverembed = new Discord.MessageEmbed()
         .setAuthor(`${message.guild.name} - Informations`, message.guild.iconURL)
         .setColor("#00FFFF")
-        .addField('Created', **${moment.utc(message.guild.createdAt).format("dddd, Do MMMM YYYY @ HH:mm:ss")}** (${moment(createdTimestamp, "YYYYMMDD").fromNow()}, true)
+        .addField('Created', ${moment.utc(message.guild.createdAt).format("dddd, Do MMMM YYYY @ HH:mm:ss")} (${moment(createdTimestamp, "YYYYMMDD").fromNow()}, true)
         .addField('Server owner', message.guild.owner.user.tag, true)
         .addField('Server region', message.guild.region, true)
         .setThumbnail(sicon)
