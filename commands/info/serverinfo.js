@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-
+const Discord = require('moment');
 exports.run = (client, message, args) =>{
     function checkBots(guild) {
         let botCount = 0;
