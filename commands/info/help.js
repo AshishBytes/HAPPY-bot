@@ -14,7 +14,7 @@ exports.run = async (client, message) => {
 		{ name: 'Other', value: '`createinvite`,`ping`' },
             ],
             timestamp: new Date(),
-            description: `HAY MY PREFIX IS /`,
+            description: `HAY MY PREFIX IS ~`,
         },
     });
 
