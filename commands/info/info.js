@@ -38,6 +38,8 @@ exports.run = (client, message, args) =>{
         .setColor("#00FFFF")
         .setThumbnail(client.user.avatarURL({ format: 'png', dynamic: true, size: 2048 }))
         .setURL(client.user.avatarURL({ format: 'png', dynamic: true, size: 2048 }))
+        .setThumbnail(client.user.avatarURL({ format: 'png', dynamic: true, size: 2048 }))
+        .setURL(client.user.avatarURL({ format: 'png', dynamic: true, size: 2048 }))
         .setTimestamp()
         .addField("HAPPY", "Show the bot's stats.")
         .addField("-------------------------------------------------------------------------------","----------------------------------------------------------------------------")
