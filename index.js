@@ -141,4 +141,11 @@ fs.readdir('./commands/test/', (err, files) => {
         client.commands.set(commandName, props);
     });
 });
+
+                    /////////////////////////////////
+
+client.on('message', async message => {
+if(message.content.match(new RegExp(`${client.user.id}`))) 
+    message.reply(new Discord.MessageEmbed().setColor("#F0EAD6").setAuthor(`${message.author.username}, My Prefix is ${prefix}, to get started; type ${prefix}help`, message.author.displayAvatarURL({dynamic:true})));
+}
 client.login(client.config.token_bot);
