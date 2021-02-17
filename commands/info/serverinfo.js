@@ -30,7 +30,7 @@ exports.run = (client, message, args) =>{
     let serverembed = new Discord.MessageEmbed()
         .setAuthor(`${message.guild.name} - Informations`, message.guild.iconURL)
         .setColor("#00FFFF")
-        .addField('Server owner', message.guild.owner.user.tag, true)
+        .addField('Server owner', message.guild.owner.tag, true)
         .addField('Server region', message.guild.region, true)
         .setThumbnail(sicon)
         .addField("Server Name", message.guild.name)
