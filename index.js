@@ -16,6 +16,8 @@ client.filters = require('./config/filters.json');
 client.commands = new discord.Collection();
 client.aliases = new discord.Collection();
 
+                    /////////////////////////////////
+
 fs.readdir('./events/', (err, files) => {
     if (err) return console.error(err);
     files.forEach(file => {
@@ -26,14 +28,25 @@ fs.readdir('./events/', (err, files) => {
     });
 	
 });
+                    /////////////////////////////////
+
+client.on("ready", () => {
+  client.user.setStatus("idle");
+  client.user.setActivity("~help", { type: "LISTENING" });
+});
+
+                    /////////////////////////////////
+
 client.on('guildCreate', guild => {
     console.log(`New guild joined: ${guild.name} (id: ${guild.id}). This guild has ${guild.memberCount} members!`);
 });
+                    /////////////////////////////////
 
 client.on("guildDelete", guild => {
     // this event triggers when the bot is removed from a guild.
     console.log(`I have been removed from: ${guild.name} (id: ${guild.id})`);
 });
+                    /////////////////////////////////
 
 fs.readdir('./player/', (err, files) => {
     if (err) return console.error(err);
@@ -44,7 +57,7 @@ fs.readdir('./player/', (err, files) => {
         client.player.on(eventName, event.bind(null, client));
     });
 });
-
+                    /////////////////////////////////
 
 fs.readdir('./commands/', (err, files) => {
     if (err) return console.error(err);
@@ -56,6 +69,7 @@ fs.readdir('./commands/', (err, files) => {
         client.commands.set(commandName, props);
     });
 });
+                    /////////////////////////////////
 
 fs.readdir('./commands/info/', (err, files) => {
     if (err) return console.error(err);
@@ -67,6 +81,7 @@ fs.readdir('./commands/info/', (err, files) => {
         client.commands.set(commandName, props);
     });
 });
+                    /////////////////////////////////
 
 fs.readdir('./commands/moderation/', (err, files) => {
     if (err) return console.error(err);
@@ -78,6 +93,7 @@ fs.readdir('./commands/moderation/', (err, files) => {
         client.commands.set(commandName, props);
     });
 }); 
+                    /////////////////////////////////
 
 fs.readdir('./commands/music/', (err, files) => {
     if (err) return console.error(err);
@@ -89,6 +105,7 @@ fs.readdir('./commands/music/', (err, files) => {
         client.commands.set(commandName, props);
     });
 });
+                    /////////////////////////////////
 
 fs.readdir('./commands/other/', (err, files) => {
     if (err) return console.error(err);
@@ -100,6 +117,7 @@ fs.readdir('./commands/other/', (err, files) => {
         client.commands.set(commandName, props);
     });
 });
+                    /////////////////////////////////
 
 fs.readdir('./commands/support/', (err, files) => {
     if (err) return console.error(err);
@@ -111,6 +129,7 @@ fs.readdir('./commands/support/', (err, files) => {
         client.commands.set(commandName, props);
     });
 });
+                    /////////////////////////////////
 
 fs.readdir('./commands/test/', (err, files) => {
     if (err) return console.error(err);
@@ -123,6 +142,7 @@ fs.readdir('./commands/test/', (err, files) => {
     });
 });
 
+                    /////////////////////////////////
 
 client.on('message', async message => {
 if(message.content.match(new RegExp(`${client.user.id}`))) 
