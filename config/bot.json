@@ -1,5 +1,5 @@
 {
-    "game": "/help",
-    "prefix": "/",
+    "game": "~help",
+    "prefix": "~",
     "token_bot": "ODEwODI1MTc0OTkwNDU0Nzk0.YCpRyg.1zJhByBJHFcCnkqBSNnapq3VH4M"
 }
