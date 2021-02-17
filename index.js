@@ -126,6 +126,6 @@ fs.readdir('./commands/test/', (err, files) => {
 
 client.on('message', async message => {
 if(message.content.match(new RegExp(`${client.user.id}`))) 
-return message.channel.send("Don't ping me little shit")
+return message.channel.send("For more information type '~help'")
 })
 client.login(client.config.token_bot);
