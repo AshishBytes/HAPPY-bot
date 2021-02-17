@@ -146,6 +146,6 @@ fs.readdir('./commands/test/', (err, files) => {
 
 client.on('message', async message => {
 if(message.content.match(new RegExp(`${client.user.id}`))) 
-return message.channel.send("My Prefix is ${prefix}, to get started; type ${prefix}help")
+return message.channel.send("My Prefix is ~, to get started; type '~help'")
 })
 client.login(client.config.token_bot);
