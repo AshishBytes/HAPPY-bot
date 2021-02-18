@@ -4,10 +4,10 @@ const client = new discord.Client({ disableMentions: 'everyone' });
 const { Player } = require('discord-player');
 
 const player = new Player(client, {
-	leaveOnEnd: false,
+	leaveOnEnd: true,
 	leaveOnStop: true,
 	leaveOnEmpty: false,
-    quality: 'high',
+        quality: 'high',
 });
 client.player = player;
 client.config = require('./config/bot.json');
