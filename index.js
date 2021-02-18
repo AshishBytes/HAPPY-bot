@@ -31,7 +31,7 @@ fs.readdir('./events/', (err, files) => {
                     /////////////////////////////////
 
 client.on("ready", () => {
-  client.user.setStatus("idle");
+  client.user.setPresence("idle");
   client.user.setActivity("~help", { type: "LISTENING" });
 });
 
