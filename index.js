@@ -7,6 +7,8 @@ const player = new Player(client, {
 	leaveOnEnd: true,
 	leaveOnStop: true,
 	leaveOnEmpty: false,
+	timeout: 120000,
+        volume: 150,
         quality: 'high',
 });
 client.player = player;
