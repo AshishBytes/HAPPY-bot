@@ -30,13 +30,6 @@ fs.readdir('./events/', (err, files) => {
 });
                     /////////////////////////////////
 
-client.on("ready", () => {
-  client.user.setPresence("idle");
-  client.user.setActivity("~help", { type: "LISTENING" });
-});
-
-                    /////////////////////////////////
-
 client.on('guildCreate', guild => {
     console.log(`New guild joined: ${guild.name} (id: ${guild.id}). This guild has ${guild.memberCount} members!`);
 });
