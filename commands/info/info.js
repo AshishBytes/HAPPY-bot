@@ -58,6 +58,6 @@ exports.run = (client, message, args) =>{
         .addField("Ping", Math.round(client.ws.ping) + "ms", true)
         .setFooter(`Uptime: ${uptime}`);
 
-    message.channel.send(serverembed);    
+    message.inlineReply(serverembed);    
 
 }
