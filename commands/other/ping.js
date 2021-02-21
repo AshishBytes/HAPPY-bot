@@ -1,5 +1,5 @@
 exports.run = async (client, message) => {
 
-    message.channel.send(`${client.emotes.success} - Ping : **${client.ws.ping}ms** !`);
+    message.inlineReply(`${client.emotes.success} - Pong! Latency is ${Date.now() - message.createdTimestamp}ms. API Latency is ${Math.round(client.ws.ping)}ms`);
 
 };
