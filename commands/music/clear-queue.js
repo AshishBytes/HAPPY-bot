@@ -6,6 +6,6 @@ exports.run = async (client, message) => {
 
     client.player.clearQueue(message);
 
-    message.channel.send(`${client.emotes.success} - The queue has just been **removed** !`);
+    message.inlineReply(`${client.emotes.success} - The queue has just been **removed** !`);
 
 };
