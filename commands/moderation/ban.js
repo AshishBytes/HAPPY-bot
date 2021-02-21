@@ -7,7 +7,7 @@ exports.run = (client, message, args) => {
 
     else{
         if(!member)
-            return message.channel.send("Please mention a valid member of this server");
+            return message.inlineReply("Please mention a valid member of this server");
         if(!member.bannable) 
             return message.inlineReply("I cannot ban this user! Do they have a higher role? Do I have ban permissions?");
 
