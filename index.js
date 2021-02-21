@@ -2,7 +2,7 @@ const fs = require('fs');
 const discord = require('discord.js');
 const client = new discord.Client({ disableMentions: 'everyone' });
 const { Player } = require('discord-player');
-
+const client = new Client();
 const player = new Player(client, {
 	leaveOnEnd: true,
 	leaveOnStop: true,
@@ -141,6 +141,6 @@ fs.readdir('./commands/test/', (err, files) => {
 
 client.on('message', async message => {
 if(message.content.match(new RegExp(`${client.user.id}`))) 
-return message.channel.send("My Prefix is ~, to get started; type '~help'")
+return msg.inlineReply("My Prefix is ~, to get started; type '~help'")
 })
 client.login(client.config.token_bot);
