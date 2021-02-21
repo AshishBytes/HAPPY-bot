@@ -1,6 +1,6 @@
 exports.run = async (client, message) => {
 
-    message.channel.send({
+    message.inlineReply({
         embed: {
             color: 'AQUA',
             author: { name: 'COMMANDS' },
