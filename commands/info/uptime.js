@@ -34,6 +34,6 @@ exports.run = (client, message, args) =>{
         .setColor("#00FFFF")
         .addField('Uptime', uptime);
 
-    message.channel.send(serverembed);
+    message.inlineReply(serverembed);
 
 }
