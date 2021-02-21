@@ -14,7 +14,7 @@ exports.run = async (client, message) => {
         array.push(client.filters[filterName] + " : " + (client.player.getQueue(message).filters[filterName] ? enabledEmoji : disabledEmoji));
     });
 
-    message.channel.send({
+    message.inlineReply({
         embed: {
             color: 'AQUA',
             footer: { text: 'HAPPY' },
