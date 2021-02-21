@@ -7,7 +7,7 @@ exports.run = async (client, message) => {
     client.player.setRepeatMode(message, false);
     client.player.stop(message);
 
-    message.channel.send(`${client.emotes.success} - I leave the voice channel!
+    message.inlineReply(`${client.emotes.success} - I leave the voice channel!
 `);
 
 };
