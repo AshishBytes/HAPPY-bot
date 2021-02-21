@@ -8,7 +8,7 @@ exports.run = async (client, message, args) =>{
     if (!amount && !user) return message.reply('Command Usage: `clear [@USER_MENTION] <Number>`');
     if (amount < 2 || amount > 99) return message.channel.send("You've provided an invalid number of messages to delete. Please ensure it's between 2 and 99 (inclusive).");
 
-    let messages = await message.channel.fetchMessages({ limit: amount });
+    let messages = await message.channel.messages.fetch({ limit: amount });
 
     if (user) {
       const filterBy = user ? user.id : this.client.user.id;
