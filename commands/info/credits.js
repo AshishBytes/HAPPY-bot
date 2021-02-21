@@ -14,6 +14,6 @@ exports.run = (client, message, args) =>{
 	.addField(`SERVER`, `[LINK](https://discord.gg/DKXWFfCAEE)`, true)
 	.setFooter("HAPPY");
 
-    message.channel.send(serverembed);    
+    message.inlineReply(serverembed);    
 
 }
