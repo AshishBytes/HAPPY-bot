@@ -18,6 +18,6 @@ exports.run = async (client, message, args) => {
     client.player.setFilters(message, filtersUpdated);
 
     if (filtersUpdated[filterRealName]) message.channel.send(`${client.emotes.music} - I'm **adding** the filter to the music, please wait... Note : the longer the music is, the longer this will take.`);
-    else message.channel.send(`${client.emotes.music} - I'm **disabling** the filter on the music, please wait... Note : the longer the music is playing, the longer this will take.`);
+    else message.inlineReply(`${client.emotes.music} - I'm **disabling** the filter on the music, please wait... Note : the longer the music is playing, the longer this will take.`);
 
 };
