@@ -2,7 +2,6 @@ const fs = require('fs');
 const discord = require('discord.js');
 const client = new discord.Client({ disableMentions: 'everyone' });
 const { Player } = require('discord-player');
-const client = new Client();
 require("./ExtendedMessage");
 const player = new Player(client, {
 	leaveOnEnd: true,
