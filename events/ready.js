@@ -5,4 +5,5 @@ module.exports = async (client) => {
     client.user.setPresence({ game: { name: '~help' }, status: 'idle' })
        .then(console.log)
        .catch(console.error);
+     })
 };
