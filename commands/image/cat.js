@@ -6,10 +6,10 @@ module.exports.run = async (bot, message, args) => {
     if (!error && response.statusCode == 200) {
       let emb = new Discord.MessageEmbed()
         .setImage(body)
-        .setColor("#00ff00")
+        .setColor("AQUA")
         .setTitle("Your random cat here")
         .setFooter(
-          `©2020 Draconian Workshop | This command requested by ${message.author.username}#${message.author.discriminator}`
+          `HAPPY`
         );
 
       message.channel.send(emb);
