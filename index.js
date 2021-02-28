@@ -1,5 +1,6 @@
 const fs = require('fs');
 const Enmap = require("enmap");
+const db = require("quick.db");
 const discord = require('discord.js');
 const client = new discord.Client({ disableMentions: 'everyone' });
 const { Player } = require('discord-player');
