@@ -6,7 +6,7 @@ module.exports.run = async (client, message, args) => {
     .setDescription(
       `<:cross1:747728200691482746> **Please type the text you want to changemymind!**`
     )
-    .setColor("RED");
+    .setColor("AQUA");
   let mindtxt = args.slice(0).join(" ");
   if (!mindtxt)
     return message.channel
