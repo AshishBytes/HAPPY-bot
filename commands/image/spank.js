@@ -13,14 +13,14 @@ module.exports.run = async (client, message, args) => {
   const { body } = await superagent.get("https://nekos.life/api/v2/img/spank");
 
   const embed = new Discord.MessageEmbed()
-    .setColor("#ff9900")
+    .setColor("AQUA")
     .setTitle(
       `${
         message.mentions.users.first().username
       }, you got spanked in da butt by ${message.author.username} >:3`
     )
     .setImage(body.url)
-    .setFooter(`© Draconian Workshop`);
+    .setFooter(`HAPPY`);
   message.channel.send({ embed });
 };
 
