@@ -11,6 +11,7 @@
     "@discordjs/opus": "^0.3.3",
     "discord-player": "^3.4.0",
     "discord.js": "^12.5.1",
+    "canvacord": "^5.1.0",
     "pidusage": "^2.0.21",
     "superagent": "^6.1.0",
     "request": "^2.88.2",
