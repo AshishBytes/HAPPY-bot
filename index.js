@@ -263,7 +263,7 @@ fs.readdir('./events/', (err, files) => {
 });
                     /////////////////////////////////
 
-fs.readdir('./events/giveaways/', (err, files) => {
+/*fs.readdir('./events/giveaways/', (err, files) => {
     if (err) return console.error(err);
     files.forEach(file => {
         const event = require(`./events/giveaways/${file}`);
@@ -271,7 +271,7 @@ fs.readdir('./events/giveaways/', (err, files) => {
         console.log(`Loading player event ${eventName}`);
         client.player.on(eventName, event.bind(null, client));
     });
-});
+});*/
 	            /////////////////////////////////
 
 client.login(client.config.token_bot);
