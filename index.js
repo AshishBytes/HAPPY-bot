@@ -175,6 +175,17 @@ fs.readdir('./commands/info/', (err, files) => {
     });
 });
                     /////////////////////////////////
+fs.readdir('./commands/giveaways/', (err, files) => {
+    if (err) return console.error(err);
+    files.forEach(file => {
+        if (!file.endsWith(".js")) return;
+        let props = require(`./commands/giveaways/${file}`);
+        let commandName = file.split(".")[0];
+        console.log(`Loading command ${commandName}`);
+        client.commands.set(commandName, props);
+    });
+});
+                    /////////////////////////////////
 
 fs.readdir('./commands/moderation/', (err, files) => {
     if (err) return console.error(err);
