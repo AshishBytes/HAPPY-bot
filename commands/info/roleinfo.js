@@ -14,7 +14,7 @@ module.exports.run = async (client, message, args) => {
   };
 
   let roleemebed = new Discord.MessageEmbed()
-    .setColor("#00ff00")
+    .setColor("AQUA")
     .addField("ID", gRole.id, inline)
     .addField("Name", gRole.name, inline)
     .addField("Mention", `<@&${gRole.id}>`, inline)
