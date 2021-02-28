@@ -3,6 +3,7 @@ const Enmap = require("enmap");
 const discord = require('discord.js');
 const client = new discord.Client({ disableMentions: 'everyone' });
 const { Player } = require('discord-player');
+const { GiveawaysManager } = require("discord-giveaways");
 require("./ExtendedMessage");
 const player = new Player(client, {
 	leaveOnEnd: true,
