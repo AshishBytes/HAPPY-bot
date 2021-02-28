@@ -28,7 +28,7 @@ module.exports.run = async (bot, message, args) => {
 
   message.channel.send(serveddrembed).then(async (message) => {
     const embed = new Discord.MessageEmbed()
-      .setColor("RANDOM")
+      .setColor("AQUA")
       .setAuthor(`${user.tag} Info`, message.author.displayAvatarURL)
       .setDescription(
         `**• Name: **${user.tag}\n**• ID: **${user.id}\n**• Account Type: **${
