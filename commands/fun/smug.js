@@ -5,9 +5,9 @@ module.exports.run = async (client, message, args) => {
   const { body } = await superagent.get("https://nekos.life/api/v2/img/smug");
 
   const embed = new Discord.MessageEmbed()
-    .setColor("#ff9900")
+    .setColor("AQUA")
     .setImage(body.url)
-    .setFooter(`© Draconian Workshop`);
+    .setFooter(`HAPPY`);
   message.channel.send({ embed });
 };
 
