@@ -8,5 +8,4 @@ module.exports = async (client) => {
             type: "LISTENING" //PLAYING: WATCHING: LISTENING: STREAMING:
         }
     });
- });
-};
+ };
