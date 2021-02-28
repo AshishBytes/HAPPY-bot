@@ -164,17 +164,6 @@ fs.readdir('./commands/', (err, files) => {
 });
                     /////////////////////////////////
 
-  fs.readdir("./commands/giveaways/", (err, files) => {
-    if (err) console.log(err);
-    files.forEach((file) => {
-      let event = require(`./commands/giveaways/${file}`);
-      console.log("loaded Event: " + file);
-      let eventName = file.split(".")[0];
-      client.giveawaysManager.on(eventName, event.bind(null, client));
-    });
-  });
-                    /////////////////////////////////
-
 fs.readdir('./commands/info/', (err, files) => {
     if (err) return console.error(err);
     files.forEach(file => {
