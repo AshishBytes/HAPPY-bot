@@ -54,7 +54,7 @@ module.exports.run = (client, message, args) => {
       true
     )
     .addField("ID", message.guild.id, true)
-    .addField("Owner", `${message.guild.owner}#${message.guild.owner.discriminator}`, true)
+    .addField("Owner", `${message.guild.owner}`, true)
     .addField("Region", region[message.guild.region], true)
     .addField("User Count", message.guild.memberCount, true)
     .addField(
