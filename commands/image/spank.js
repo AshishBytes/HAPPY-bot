@@ -6,9 +6,9 @@ module.exports.run = async (client, message, args) => {
     return message.reply("You need to mention someone to spank them");
   if (!message.channel.nsfw)
     return message.reply("No NO NO, NSFW is not enabled in this channel");
-  if (message.mentions.users.first().id === "242263403001937920")
+  if (message.mentions.users.first().id === "648468795857436691")
     return message.reply(
-      "You can't spank my Dev baka.:facepalm: He will spank your ass off >:3"
+      "You can't spank my Dev bro.:facepalm: He will spank your ass off >:3"
     );
   const { body } = await superagent.get("https://nekos.life/api/v2/img/spank");
 
