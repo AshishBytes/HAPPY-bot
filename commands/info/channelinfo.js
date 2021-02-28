@@ -32,7 +32,7 @@ module.exports.run = (client, message, args) => {
       .addField("NSFW?", nsfwV, true)
       .addField("Category: ", parentV, true)
       .addField("Position: ", message.channel.position, true)
-      .setColor("GREEN");
+      .setColor("AQUA");
 
     return message.channel.send(embed);
   }
