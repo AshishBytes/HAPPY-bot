@@ -4,10 +4,10 @@ const superagent = require("superagent");
 module.exports.run = async (client, message, args) => {
   if (!message.mentions.users.first())
     return message.reply("You need to mention someone to tickle them");
-  if (message.mentions.users.first().id === "242263403001937920")
+  if (message.mentions.users.first().id === "648468795857436691")
     return message.reply("You can't tickle him. He will explode on impact!");
   if (message.mentions.users.first().id == client.user.id)
-    return message.channel.send("Nuuuuuuuuuuuuuuuuuuuuuu that tickless");
+    return message.channel.send("Nuuuuuuuuu that tickless");
   const { body } = await superagent.get("https://nekos.life/api/v2/img/tickle");
 
   const embed = new Discord.MessageEmbed()
