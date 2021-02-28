@@ -18,14 +18,14 @@ module.exports.run = async (client, message, args) => {
     });
 
   const embed = new Discord.MessageEmbed()
-    .setColor("#ff9900")
+    .setColor("AQUA")
     .setTitle(
       `${message.mentions.users.first().username}, you got poked by ${
         message.author.username
       }`
     )
     .setImage(body.url)
-    .setFooter(`© Draconian Workshop`);
+    .setFooter(`HAPPY`);
   message.channel.send({ embed });
 };
 
