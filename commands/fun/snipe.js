@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 
 module.exports.run = (client, message, args) => {
-  const msg = client.snipes.get(message.channel.id);
+  const msg = client.snipes.cache.get(message.channel.id);
   if (!msg)
     return message.channel.send(
       "There are no deleted messages in this channel!"
