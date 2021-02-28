@@ -17,7 +17,7 @@ module.exports.run = (client, message, _args) => {
 
         const emb = new Discord.MessageEmbed();
         emb.setDescription(`${caption} - ${category} #${id}`);
-        emb.setColor("GREEN");
+        emb.setColor("AQUA");
         emb.setImage(image);
 
         message.channel.send(emb);
