@@ -11,14 +11,14 @@ module.exports.run = async (client, message, args) => {
   const { body } = await superagent.get("https://nekos.life/api/v2/img/tickle");
 
   const embed = new Discord.MessageEmbed()
-    .setColor("#ff9900")
+    .setColor("AQUA")
     .setTitle(
       `${message.mentions.users.first().username}, you got tickled by ${
         message.author.username
       }`
     )
     .setImage(body.url)
-    .setFooter(`© Draconian Workshop`);
+    .setFooter(`HAPPY`);
   message.channel.send({ embed });
 };
 
