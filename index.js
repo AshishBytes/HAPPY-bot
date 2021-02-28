@@ -251,6 +251,18 @@ fs.readdir('./commands/test/', (err, files) => {
 });
                     /////////////////////////////////
 
+fs.readdir('./commands/fun/', (err, files) => {
+    if (err) return console.error(err);
+    files.forEach(file => {
+        if (!file.endsWith(".js")) return;
+        let props = require(`./commands/fun/${file}`);
+        let commandName = file.split(".")[0];
+        console.log(`Loading command ${commandName}`);
+        client.commands.set(commandName, props);
+    });
+});
+                    /////////////////////////////////
+
 fs.readdir('./events/', (err, files) => {
     if (err) return console.error(err);
     files.forEach(file => {
