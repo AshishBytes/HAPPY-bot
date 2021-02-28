@@ -1,8 +1,6 @@
 const Discord = require("discord.js");
 
 function checkDays(date) {
-  let ownerTag = undefined;
-<client>.users.fetch(<guild>.ownerID).then(user => ownerTag = user.tag);
   let now = new Date();
   let diff = now.getTime() - date.getTime();
   let days = Math.floor(diff / 86400000);
@@ -58,7 +56,7 @@ module.exports.run = (client, message, args) => {
     .addField("ID", message.guild.id, true)
     .addField(
       "Owner",
-      `${message.guild.owner.user.tag} (${message.guild.owner.id})`,
+      `${message.guild.ownerTag} (${message.guild.owner.id})`,
       true
     )
     .addField("Region", region[message.guild.region], true)
