@@ -92,6 +92,10 @@ const manager = new GiveawayManagerWithOwnDatabase(client, {
 client.giveawaysManager = manager;
 // We now have a client.giveawaysManager property to manage our giveaways!
 
+
+
+
+
                     /////////////////////////////////
 
 client.on('guildCreate', guild => {
@@ -269,6 +273,5 @@ fs.readdir('./events/giveaways/', (err, files) => {
     });
 });
 	            /////////////////////////////////
-		  
-});
+
 client.login(client.config.token_bot);
