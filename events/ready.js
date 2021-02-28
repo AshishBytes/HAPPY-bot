@@ -10,3 +10,4 @@ module.exports = async (client) => {
         status: 'idle'
     })
 })
+};
