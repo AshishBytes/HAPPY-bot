@@ -1,6 +1,8 @@
 const Discord = require("discord.js");
 
 function checkDays(date) {
+  let ownerTag = undefined;
+<client>.users.fetch(<guild>.ownerID).then(user => ownerTag = user.tag);
   let now = new Date();
   let diff = now.getTime() - date.getTime();
   let days = Math.floor(diff / 86400000);
