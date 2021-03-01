@@ -26,8 +26,6 @@ client.filters = require('./config/filters.json');
 client.commands = new discord.Collection();
 client.aliases = new discord.Collection();
 client.snipes = new Map();
-// client.dbl = dbl
-const cooldowns = new Discord.Collection();
 
                     /////////////////////////////////
 
