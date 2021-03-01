@@ -23,7 +23,7 @@ module.exports.run = async (bot, message, args) => {
   const member = message.guild.member(user);
   const roles = member.roles.cache.map((r) => `${r}`).join(", ");
   let serveddrembed = new Discord.MessageEmbed()
-    .setDescription("<a:loading:806686528549814344> Fetching Uptime...")
+    .setDescription("<a:Loading:815962721140473866> Fetching Uptime...")
     .setColor("RED");
 
   message.channel.send(serveddrembed).then(async (message) => {
