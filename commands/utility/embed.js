@@ -6,13 +6,13 @@ module.exports.run = async (bot, message, args) => {
 
   const noPerms = new Discord.MessageEmbed()
     .setDescription(
-      `:no_entry_sign: ${message.author.username}, Missing Permission!`
+      `<a:cross1:815954673169072138> ${message.author.username}, Missing Permission!`
     )
     .setColor(0xff0000);
 
   const noPerms123 = new Discord.MessageEmbed()
     .setDescription(
-      `:no_entry_sign: ${message.author.username}, Missing Info or Title!`
+      `<a:cross1:815954673169072138> ${message.author.username}, Missing Info or Title!`
     )
     .setColor(0xff0000);
 
