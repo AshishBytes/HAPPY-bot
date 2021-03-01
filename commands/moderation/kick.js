@@ -3,7 +3,7 @@ const Discord = require("discord.js");
 module.exports.run = async (client, msg, args) => {
   let notice3 = new Discord.MessageEmbed()
     .setDescription(
-      `<:cross1:747728200691482746> **I don't have permission to kick people!**`
+      `<a:cross1:815954673169072138> **I don't have permission to kick people!**`
     )
     .setColor("RED");
   if (!msg.guild.member(client.user).hasPermission("KICK_MEMBERS"))
@@ -12,7 +12,7 @@ module.exports.run = async (client, msg, args) => {
   let reason = args.slice(1).join(" ");
   let embed6 = new Discord.MessageEmbed()
     .setDescription(
-      `:no_entry_sign: ${msg.author.username}, Missing Permission`
+      `<a:cross1:815954673169072138> ${msg.author.username}, Missing Permission`
     )
     .setColor("RED");
   if (!msg.member.hasPermission("KICK_MEMBERS"))
@@ -28,12 +28,12 @@ module.exports.run = async (client, msg, args) => {
 
   let dsfdsfsdf = new Discord.MessageEmbed()
     .setDescription(
-      `<:cross1:747728200691482746> Access Denied, **that member has roles higher or equal to you!**`
+      `<a:cross1:815954673169072138> Access Denied, **that member has roles higher or equal to you!**`
     )
     .setColor("RED");
   let sdfsdfsdfsd = new Discord.MessageEmbed()
     .setDescription(
-      `<:cross1:747728200691482746> Access Denied, **that member has roles higher or equal to me!**`
+      `<a:cross1:815954673169072138> Access Denied, **that member has roles higher or equal to me!**`
     )
     .setColor("RED");
   let botRolePossition = msg.guild.member(client.user).roles.highest.position;
@@ -44,7 +44,7 @@ module.exports.run = async (client, msg, args) => {
 
   let notice2 = new Discord.MessageEmbed()
     .setDescription(
-      `<:cross1:747728200691482746> **You cannot kick yourself!**`
+      `<a:cross1:815954673169072138> **You cannot kick yourself!**`
     )
     .setColor("RED");
   if (msg.mentions.users.first().id === msg.author.id)
@@ -52,7 +52,7 @@ module.exports.run = async (client, msg, args) => {
 
   let sdfdfsdfsdfdfs = new Discord.MessageEmbed()
     .setDescription(
-      `<:cross1:747728200691482746> **An error occurred with banned that member!**`
+      `<a:cross1:815954673169072138> **An error occurred with banned that member!**`
     )
     .setColor("RED");
 
@@ -72,7 +72,7 @@ module.exports.run = async (client, msg, args) => {
 
   let suembed = new Discord.MessageEmbed()
     .setDescription(
-      `<:tick:702386031361523723> **Kicked ${kickTaged.username}#${kickTaged.discriminator}** | **${reason}**`
+      `<a:cross1:815954673169072138> **Kicked ${kickTaged.username}#${kickTaged.discriminator}** | **${reason}**`
     )
     .setColor("AQUA");
   msg.delete();
