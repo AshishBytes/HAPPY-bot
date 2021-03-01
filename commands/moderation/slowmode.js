@@ -45,7 +45,7 @@ exports.run = (client, message, args) => {
   });
   let bsuembed = new Discord.MessageEmbed()
     .setDescription(
-      `<:yes:807573037998276608> Set channel's slowmode to **${duration}s** `
+      `<a:yes:815973942665674774> Set channel's slowmode to **${duration}s** `
     )
     .setColor("AQUA");
 
