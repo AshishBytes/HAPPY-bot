@@ -18,8 +18,8 @@ module.exports.run = async (client, msg, args) => {
   if (!msg.member.hasPermission("KICK_MEMBERS"))
     return msg.channel.send(embed6).then((m) => m.delete({ timeout: 5000 }));
   let mmqembed = new Discord.MessageEmbed()
-    .setTitle("Command: d!kick")
-    .setDescription("Usage: d!kick @user reason")
+    .setTitle("Command: ~kick")
+    .setDescription("Usage: ~kick @user reason")
     .setColor("RED");
   if (!kickTaged) {
     msg.delete();
