@@ -1,24 +1,93 @@
-exports.run = (client, message, args) => {
-    let member = message.mentions.members.first() || message.guild.members.cache.get(args[0]);
+const Discord = require("discord.js");
+const config = require("../../config.json");
 
-    if(!message.member.hasPermission("KICK_MEMBERS")){
-        message.inlineReply("You don't have the permissions to use this command!");
-    }
-    else{
-        
-        if(!member)
-            //you have to type !kick then @username#1234 as an example
-            return message.inlineReply("Please mention a valid member of this server");
-        if(!member.kickable) 
-            return message.inlineReply("I cannot kick this user! Do they have a higher role? Do I have kick permissions?");
+module.exports.run = async (client, msg, args) => {
+  let notice3 = new Discord.MessageEmbed()
+    .setDescription(
+      `<:cross1:747728200691482746> **I don't have permission to kick people!**`
+    )
+    .setColor("RED");
+  if (!msg.guild.member(client.user).hasPermission("KICK_MEMBERS"))
+    return msg.channel.send(notice3).then((m) => m.delete({ timeout: 5000 }));
+  let kickTaged = msg.mentions.users.first();
+  let reason = args.slice(1).join(" ");
+  let embed6 = new Discord.MessageEmbed()
+    .setDescription(
+      `:no_entry_sign: ${msg.author.username}, Missing Permission`
+    )
+    .setColor("RED");
+  if (!msg.member.hasPermission("KICK_MEMBERS"))
+    return msg.channel.send(embed6).then((m) => m.delete({ timeout: 5000 }));
+  let mmqembed = new Discord.MessageEmbed()
+    .setTitle("Command: d!kick")
+    .setDescription("Usage: d!kick @user reason")
+    .setColor("RED");
+  if (!kickTaged) {
+    msg.delete();
+    return msg.channel.send(mmqembed).then((m) => m.delete({ timeout: 5000 }));
+  }
 
-        // slice(1) removes the first part, which here should be the user mention or ID
-        // join(' ') takes all the various parts to make it a single string.
-        let reason = args.slice(1).join(' ');
-        if(!reason) 
-            reason = "No reason provided";
-        member.kick(reason)
-            .catch(error => message.channel.send(`Sorry ${message.author} I couldn't kick because of : ${error}`));
-            message.inlineReply(`${member.user.tag} has been kicked by ${message.author.tag} because: ${reason}`);
-    }
-}
+  let dsfdsfsdf = new Discord.MessageEmbed()
+    .setDescription(
+      `<:cross1:747728200691482746> Access Denied, **that member has roles higher or equal to you!**`
+    )
+    .setColor("RED");
+  let sdfsdfsdfsd = new Discord.MessageEmbed()
+    .setDescription(
+      `<:cross1:747728200691482746> Access Denied, **that member has roles higher or equal to me!**`
+    )
+    .setColor("RED");
+  let botRolePossition = msg.guild.member(client.user).roles.highest.position;
+  let rolePosition = msg.guild.member(kickTaged).roles.highest.position;
+  let userRolePossition = msg.member.roles.highest.position;
+  if (userRolePossition <= rolePosition) return msg.channel.send(dsfdsfsdf);
+  if (botRolePossition <= rolePosition) return msg.channel.send(sdfsdfsdfsd);
+
+  let notice2 = new Discord.MessageEmbed()
+    .setDescription(
+      `<:cross1:747728200691482746> **You cannot kick yourself!**`
+    )
+    .setColor("RED");
+  if (msg.mentions.users.first().id === msg.author.id)
+    return msg.channel.send(notice2);
+
+  let sdfdfsdfsdfdfs = new Discord.MessageEmbed()
+    .setDescription(
+      `<:cross1:747728200691482746> **An error occurred with banned that member!**`
+    )
+    .setColor("RED");
+
+  if (!msg.guild.member(kickTaged).kickable) {
+    return msg.channel.send(sdfdfsdfsdfdfs);
+  }
+
+  if (reason.length < 1) reason = "No reason given.";
+
+  let kickEmbed = new Discord.MessageEmbed()
+    .setColor("RED")
+    .setTitle(`Action Kick`)
+    .addField("Target", `**<@${kickTaged.id}> **`)
+    .addField("User", `<@${msg.author.id}>`)
+    .addField("Reason", `\`\`\`${reason}\`\`\``)
+    .setTimestamp();
+
+  let suembed = new Discord.MessageEmbed()
+    .setDescription(
+      `<:tick:702386031361523723> **Kicked ${kickTaged.username}#${kickTaged.discriminator}** | **${reason}**`
+    )
+    .setColor("AQUA");
+  msg.delete();
+  msg.channel.send(suembed);
+  msg.guild.member(kickTaged).kick(reason);
+
+  kickTaged.send(`You had been kicked in **${msg.guild.name}**, ${reason}`);
+};
+
+module.exports.help = {
+  name: "kick",
+  description:
+    "This command is used for kicking people u hates or againsting your server rules.",
+  usage: "d!kick <mentions> <reason>",
+  accessableby: "Kick Members",
+  aliases: [],
+};
