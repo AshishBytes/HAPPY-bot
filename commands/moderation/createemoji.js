@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 module.exports.run = async (client, message, args) => {
   let notice3 = new Discord.MessageEmbed()
     .setDescription(
-      `<:cross1:747728200691482746> **I don't have permission to create emoji!**`
+      `<a:cross1:815954673169072138> **I don't have permission to create emoji!**`
     )
     .setColor("RED");
   if (!message.guild.member(client.user).hasPermission("MANAGE_EMOJIS"))
@@ -12,7 +12,7 @@ module.exports.run = async (client, message, args) => {
   try {
     let embed6 = new Discord.MessageEmbed()
       .setDescription(
-        `:no_entry_sign: ${message.author.username}, Missing Permission`
+        `<a:cross1:815954673169072138> ${message.author.username}, Missing Permission`
       )
       .setColor("RED");
     if (!message.member.hasPermission("MANAGE_EMOJIS"))
