@@ -38,7 +38,7 @@ module.exports.run = async (client, message, args) => {
   let derweSA = client.mapss.get("uptimedate");
   let serveddrembed = new Discord.MessageEmbed()
     .setDescription("<a:loading:806686528549814344> Fetching Uptime...")
-    .setColor("RED");
+    .setColor("AQUA");
 
   message.channel.send(serveddrembed).then(async (message) => {
     await fetch(
@@ -49,7 +49,7 @@ module.exports.run = async (client, message, args) => {
         let numberas = data.Uptime_Stats.Total.Uptime.toLocaleString();
 
         let serverembedss = new Discord.MessageEmbed()
-          .setColor("#ffbbbb")
+          .setColor("AQUA")
           .addField(
             "Bot Uptime",
             days +
