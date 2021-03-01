@@ -6,6 +6,11 @@ const client = new discord.Client({ disableMentions: 'everyone' });
 const { Player } = require('discord-player');
 const { GiveawaysManager } = require("discord-giveaways");
 require("./ExtendedMessage");
+let nz_date_string = new Date().toLocaleString("en-US", {
+  timeZone: "Asia/Kolkata",
+});
+client.mapss = new Map();
+client.mapss.set("uptimedate", nz_date_string);
 const player = new Player(client, {
 	leaveOnEnd: true,
 	leaveOnStop: true,
@@ -20,6 +25,9 @@ client.emotes = require('./config/emojis.json');
 client.filters = require('./config/filters.json');
 client.commands = new discord.Collection();
 client.aliases = new discord.Collection();
+client.snipes = new Map();
+// client.dbl = dbl
+const cooldowns = new Discord.Collection();
 
                     /////////////////////////////////
 
