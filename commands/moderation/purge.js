@@ -27,7 +27,7 @@ exports.run = async (client, message, args) => {
     return 0
   }
   // Notify if success
-  message.inlineReply(`Successfully deleted ${ deleteCount } ${ deleteCount === 1 ? 'message' : 'messages' }.`).then(el => setTimeout(() => el.delete(), 3000))
+  message.channel.send(`Successfully deleted ${ deleteCount } ${ deleteCount === 1 ? 'message' : 'messages' }.`).then(el => setTimeout(() => el.delete(), 3000))
   return 0
 }
 exports.help = {
