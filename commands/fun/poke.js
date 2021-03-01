@@ -5,7 +5,7 @@ module.exports.run = async (client, message, args) => {
   if (!message.mentions.users.first())
     return message.reply("You need to mention someone to pat them");
   if (message.mentions.users.first().id === client.user.id)
-    return message.channel.send("<a:yayyy:497742636439044096>");
+    return message.channel.send("<a:yayyy:815952456286601216>");
   if (message.mentions.users.first().id == message.author.id)
     return message.reply("Idk if thats possible chief");
   const { body } = await superagent
