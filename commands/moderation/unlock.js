@@ -3,11 +3,11 @@ const Discord = require("discord.js");
 exports.run = (client, message, args) => {
   let notice3 = new Discord.MessageEmbed()
     .setDescription(
-      `<:cross1:747728200691482746> **I don't have permission to manage channel!**`
+      `<a:cross1:815954673169072138> **I don't have permission to manage channel!**`
     )
     .setColor("RED");
   let dfgrdgdfgdf = new Discord.MessageEmbed()
-    .setDescription(`<:tick:702386031361523723> **Lockdown lifted**`)
+    .setDescription(`<:yes:807573037998276608> **Lockdown lifted**`)
     .setColor("GREEN");
 
   if (!message.guild.member(client.user).hasPermission("MANAGE_CHANNELS"))
@@ -16,7 +16,7 @@ exports.run = (client, message, args) => {
       .then((msg) => msg.delete({ timeout: 5000 }));
   let mmqembed = new Discord.MessageEmbed()
     .setDescription(
-      `:no_entry_sign: ${message.author.username}, Missing Permission`
+      `<a:cross1:815954673169072138> ${message.author.username}, Missing Permission`
     )
     .setColor("RED");
   if (!message.member.hasPermission("MANAGE_CHANNELS"))
