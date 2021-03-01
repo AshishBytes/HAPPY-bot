@@ -1,24 +1,16 @@
-const Discord = require("discord.js");
+const Discord = require('discord.js')
 
-module.exports.run = (client, message, args) => {
-  const msg = client.snipes.cache.get(message.channel.id);
-  if (!msg)
-    return message.channel.send(
-      "There are no deleted messages in this channel!"
-    );
-  const embed = new Discord.MessageEmbed()
-    .setAuthor(msg.author)
-    .setDescription(msg.content);
-  if (msg.image) embed.setImage(msg.image);
+module.exports.run = async (bot, message, args) => {
+    const msg = bot.snipes.get(message.channel.id)
+    const embed = new Discord.MessageEmbed()
+    .setAuthor(msg.author, msg.member.user.displayAvatarURL())
+    .setDescription(msg.content)
+    .setFooter('Get Sniped lol')
+    .setTimestamp();
+    message.channel.send(embed);
+}
 
-  message.channel.send(embed);
-};
-
-module.exports.help = {
-  name: "snipe",
-  description:
-    "This command is used for sniping latest message been deleted by members.",
-  usage: "d!snipe",
-  accessableby: "Member",
-  aliases: [],
-};
+module.exports.config = {
+    name: "snipe",
+    aliases: []
+}
