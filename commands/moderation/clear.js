@@ -3,7 +3,7 @@ const Discord = require("discord.js");
 module.exports.run = async (client, message, args) => {
   let embed6 = new Discord.MessageEmbed()
     .setDescription(
-      `:no_entry_sign: ${message.author.username}, Missing Permission`
+      `<a:cross1:815954673169072138> ${message.author.username}, Missing Permission`
     )
     .setColor("RED");
   if (!message.member.hasPermission("MANAGE_MESSAGES"))
@@ -12,7 +12,7 @@ module.exports.run = async (client, message, args) => {
       .then((m) => m.delete({ timeout: 5000 }));
   if (!args[0])
     return message.channel
-      .send(`<:no:565766936189861889> Use: **\`?clear <1 - 100>\`**`)
+      .send(`<a:cross1:815954673169072138> Use: **\`?clear <1 - 100>\`**`)
       .then((m) => m.delete({ timeout: 7000 }));
 
   let embed = new Discord.MessageEmbed()
