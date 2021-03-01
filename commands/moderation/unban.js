@@ -13,7 +13,7 @@ module.exports.run = (client, message, args) => {
     .setColor("RED");
 
   let EMDDD = new Discord.MessageEmbed()
-    .setDescription(`<:tick:702386031361523723> **Unbanned** ${user.id}`)
+    .setDescription(`<:yes:807573037998276608> **Unbanned** ${user.id}`)
     .setColor("#FFFF00");
 
   let userID = args[0];
