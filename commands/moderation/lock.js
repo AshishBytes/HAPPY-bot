@@ -3,7 +3,7 @@ const ms = require("ms");
 
 module.exports.run = (client, message, args) => {
   let dfgrdgdfgdf = new Discord.MessageEmbed()
-    .setDescription(`<:yes:807573037998276608> **Lockdown lifted**`)
+    .setDescription(`<a:yes:815973942665674774> **Lockdown lifted**`)
     .setColor("GREEN");
   let notice3 = new Discord.MessageEmbed()
     .setDescription(
@@ -54,7 +54,7 @@ module.exports.run = (client, message, args) => {
       .then(() => {
         let bsuembed = new Discord.MessageEmbed()
           .setDescription(
-            `<:yes:807573037998276608> Locked the channel down for **${ms(
+            `<a:yes:815973942665674774> Locked the channel down for **${ms(
               ms(time),
               { long: true }
             )}**`
