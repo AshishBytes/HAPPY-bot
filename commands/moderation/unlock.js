@@ -7,7 +7,7 @@ exports.run = (client, message, args) => {
     )
     .setColor("RED");
   let dfgrdgdfgdf = new Discord.MessageEmbed()
-    .setDescription(`<:yes:807573037998276608> **Lockdown lifted**`)
+    .setDescription(`<a:yes:815973942665674774> **Lockdown lifted**`)
     .setColor("GREEN");
 
   if (!message.guild.member(client.user).hasPermission("MANAGE_CHANNELS"))
