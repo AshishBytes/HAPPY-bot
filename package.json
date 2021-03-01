@@ -12,6 +12,7 @@
     "discord-player": "^3.4.0",
     "twemoji-parser": "^13.0.0",
     "discord.js": "^12.5.1",
+    "weather-js": "^2.0.0",
     "canvacord": "^5.1.0",
     "node-fetch": "^2.6.1",
     "os": "^0.1.1",
