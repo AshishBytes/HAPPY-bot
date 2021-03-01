@@ -8,10 +8,10 @@ module.exports.run = async (bot, message, args) => {
   };
 
   let status = {
-    online: "<:online:734741273214320652> Online",
-    idle: "<:idle:734741276779479121> Idle",
-    dnd: "<:dnd:734741275139375104> Do Not Disturb",
-    invisible: "<:invisible:734741275294826606> Offline",
+    online: "<a:online:815960120516280341> Online",
+    idle: "<a:idle:815960445813915698> Idle",
+    dnd: "<a:dnd:815960974044954685> Do Not Disturb",
+    invisible: "<a:invisible:815961296758374509> Offline",
   };
 
   let user;
