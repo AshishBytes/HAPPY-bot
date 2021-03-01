@@ -5,6 +5,7 @@ const discord = require('discord.js');
 const client = new discord.Client({ disableMentions: 'everyone' });
 const { Player } = require('discord-player');
 const { GiveawaysManager } = require("discord-giveaways");
+const cooldowns = new discord.Collection();
 require("./ExtendedMessage");
 let nz_date_string = new Date().toLocaleString("en-US", {
   timeZone: "Asia/Kolkata",
@@ -26,7 +27,6 @@ client.filters = require('./config/filters.json');
 client.commands = new discord.Collection();
 client.aliases = new discord.Collection();
 client.snipes = new Map();
-
                     /////////////////////////////////
 
 client.on('message', async message => {
