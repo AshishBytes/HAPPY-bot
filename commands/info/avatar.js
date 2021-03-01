@@ -8,14 +8,14 @@ module.exports.run = (client, message, args) => {
     : message.author.avatarURL({ format: "png", dynamic: true, size: 2048 });
   if (message.mentions.users.size > 0) {
     const embed = new Discord.MessageEmbed()
-      .setColor(0xffff00)
+      .setColor("AQUA")
       .setTitle(`Avatar for ${message.mentions.users.first().username}:`)
       .setImage(`${avatar}`);
 
     message.channel.send({ embed });
   } else {
     const embed = new Discord.MessageEmbed()
-      .setColor(0xffff00)
+      .setColor("AQUA")
       .setTitle(`Avatar for ${message.author.username}:`)
       .setImage(`${avatar + "?size=2048"}`);
 
