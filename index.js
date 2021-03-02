@@ -16,11 +16,11 @@ const player = new Player(client, {
 	leaveOnEnd: true,
 	leaveOnStop: true,
 	leaveOnEmpty: false,
-	timeout: 1200000,
+	timeout: 120000,
         volume: 150,
         quality: 'high',
 });
-client.zlayer = new Player(client);
+client.player = player;
 client.config = require('./config/bot.json');
 client.emotes = require('./config/emojis.json');
 client.filters = require('./config/filters.json');
@@ -120,9 +120,38 @@ client.on("guildDelete", guild => {
 
 
 
-                    ///////////////////////////////////////////////////////////////////////////////////////////////////
-                    ///////////////////////////////////////////////////////////////////////////////////////////////////
-                    ///////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    /////////////////////////////////
 
 fs.readdir('./player/', (err, files) => {
     if (err) return console.error(err);
@@ -132,17 +161,20 @@ fs.readdir('./player/', (err, files) => {
         console.log(`Loading player event ${eventName}`);
         client.player.on(eventName, event.bind(null, client));
     });
+});
                     /////////////////////////////////
 
-	fs.readdir('./events/', (err, files) => {
+fs.readdir('./commands/', (err, files) => {
     if (err) return console.error(err);
     files.forEach(file => {
-        const event = require(`./events/${file}`);
-        let eventName = file.split(".")[0];
-        console.log(`Loading player event ${eventName}`);
-        client.player.on(eventName, event.bind(null, client));
+        if (!file.endsWith(".js")) return;
+        let props = require(`./commands/${file}`);
+        let commandName = file.split(".")[0];
+        console.log(`Loading command ${commandName}`);
+        client.commands.set(commandName, props);
     });
-		                    /////////////////////////////////
+});
+                    /////////////////////////////////
 
 fs.readdir('./commands/info/', (err, files) => {
     if (err) return console.error(err);
@@ -260,6 +292,18 @@ fs.readdir('./commands/utility/', (err, files) => {
         console.log(`Loading command ${commandName}`);
         client.commands.set(commandName, props);
     });
+});
+                    /////////////////////////////////
+
+fs.readdir('./events/', (err, files) => {
+    if (err) return console.error(err);
+    files.forEach(file => {
+        const event = require(`./events/${file}`);
+        let eventName = file.split(".")[0];
+        console.log(`Loading event ${eventName}`);
+        client.on(eventName, event.bind(null, client));
+    });
+	
 });
                     /////////////////////////////////
 
