@@ -12,7 +12,7 @@ let nz_date_string = new Date().toLocaleString("en-US", {
 });
 client.mapss = new Map();
 client.mapss.set("uptimedate", nz_date_string);
-const player = new player(client, {
+const Player = new player(client, {
 	leaveOnEnd: true,
 	leaveOnStop: true,
 	leaveOnEmpty: false,
