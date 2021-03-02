@@ -20,7 +20,7 @@ const player = new player(client, {
         volume: 150,
         quality: 'high',
 });
-client.player = new Player(client);
+client.zlayer = new Player(client);
 client.config = require('./config/bot.json');
 client.emotes = require('./config/emojis.json');
 client.filters = require('./config/filters.json');
@@ -133,7 +133,7 @@ fs.readdirSync('./commands').forEach(dirs => {
 });
 
 const events = fs.readdirSync('./events').filter(file => file.endsWith('.js'));
-const player = fs.readdirSync('./player').filter(file => file.endsWith('.js'));
+const zlayer = fs.readdirSync('./player').filter(file => file.endsWith('.js'));
 
 for (const file of events) {
     console.log(`Loading discord.js event ${file}`);
@@ -144,7 +144,7 @@ for (const file of events) {
 for (const file of player) {
     console.log(`Loading discord-player event ${file}`);
     const event = require(`./player/${file}`);
-    client.player.on(file.split(".")[0], event.bind(null, client));
+    client.zlayer.on(file.split(".")[0], event.bind(null, client));
 };
                     /////////////////////////////////
 
