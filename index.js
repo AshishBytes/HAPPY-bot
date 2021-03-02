@@ -3,7 +3,7 @@ const Enmap = require("enmap");
 const db = require("quick.db");
 const discord = require('discord.js');
 const client = new discord.Client({ disableMentions: 'everyone' });
-const { Player } = require('discord-player');
+const { player } = require('discord-player');
 const { GiveawaysManager } = require("discord-giveaways");
 const cooldowns = new discord.Collection();
 require("./ExtendedMessage");
@@ -12,7 +12,7 @@ let nz_date_string = new Date().toLocaleString("en-US", {
 });
 client.mapss = new Map();
 client.mapss.set("uptimedate", nz_date_string);
-const player = new Player(client, {
+const player = new player(client, {
 	leaveOnEnd: true,
 	leaveOnStop: true,
 	leaveOnEmpty: false,
