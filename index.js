@@ -16,7 +16,7 @@ const player = new player(client, {
 	leaveOnEnd: true,
 	leaveOnStop: true,
 	leaveOnEmpty: false,
-	timeout: 120000,
+	timeout: 1200000,
         volume: 150,
         quality: 'high',
 });
