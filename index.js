@@ -141,7 +141,7 @@ for (const file of events) {
     client.on(file.split(".")[0], event.bind(null, client));
 };
 
-for (const file of player) {
+for (const file of zlayer) {
     console.log(`Loading discord-player event ${file}`);
     const event = require(`./player/${file}`);
     client.zlayer.on(file.split(".")[0], event.bind(null, client));
