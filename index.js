@@ -120,191 +120,32 @@ client.on("guildDelete", guild => {
 
 
 
+                    ///////////////////////////////////////////////////////////////////////////////////////////////////
 
+fs.readdirSync('./commands').forEach(dirs => {
+    const commands = fs.readdirSync(`./commands/${dirs}`).filter(files => files.endsWith('.js'));
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                    /////////////////////////////////
-
-fs.readdir('./player/', (err, files) => {
-    if (err) return console.error(err);
-    files.forEach(file => {
-        const event = require(`./player/${file}`);
-        let eventName = file.split(".")[0];
-        console.log(`Loading player event ${eventName}`);
-        client.player.on(eventName, event.bind(null, client));
-    });
+    for (const file of commands) {
+        const command = require(`./commands/${dirs}/${file}`);
+        console.log(`Loading command ${file}`);
+        client.commands.set(command.name.toLowerCase(), command);
+    };
 });
-                    /////////////////////////////////
 
-fs.readdir('./commands/', (err, files) => {
-    if (err) return console.error(err);
-    files.forEach(file => {
-        if (!file.endsWith(".js")) return;
-        let props = require(`./commands/${file}`);
-        let commandName = file.split(".")[0];
-        console.log(`Loading command ${commandName}`);
-        client.commands.set(commandName, props);
-    });
-});
-                    /////////////////////////////////
+const events = fs.readdirSync('./events').filter(file => file.endsWith('.js'));
+const player = fs.readdirSync('./player').filter(file => file.endsWith('.js'));
 
-fs.readdir('./commands/info/', (err, files) => {
-    if (err) return console.error(err);
-    files.forEach(file => {
-        if (!file.endsWith(".js")) return;
-        let props = require(`./commands/info/${file}`);
-        let commandName = file.split(".")[0];
-        console.log(`Loading command ${commandName}`);
-        client.commands.set(commandName, props);
-    });
-});
-                    /////////////////////////////////
-fs.readdir('./commands/giveaways/', (err, files) => {
-    if (err) return console.error(err);
-    files.forEach(file => {
-        if (!file.endsWith(".js")) return;
-        let props = require(`./commands/giveaways/${file}`);
-        let commandName = file.split(".")[0];
-        console.log(`Loading command ${commandName}`);
-        client.commands.set(commandName, props);
-    });
-});
-                    /////////////////////////////////
+for (const file of events) {
+    console.log(`Loading discord.js event ${file}`);
+    const event = require(`./events/${file}`);
+    client.on(file.split(".")[0], event.bind(null, client));
+};
 
-fs.readdir('./commands/moderation/', (err, files) => {
-    if (err) return console.error(err);
-    files.forEach(file => {
-        if (!file.endsWith(".js")) return;
-        let props = require(`./commands/moderation/${file}`);
-        let commandName = file.split(".")[0];
-        console.log(`Loading command ${commandName}`);
-        client.commands.set(commandName, props);
-    });
-}); 
-                    /////////////////////////////////
-
-fs.readdir('./commands/music/', (err, files) => {
-    if (err) return console.error(err);
-    files.forEach(file => {
-        if (!file.endsWith(".js")) return;
-        let props = require(`./commands/music/${file}`);
-        let commandName = file.split(".")[0];
-        console.log(`Loading command ${commandName}`);
-        client.commands.set(commandName, props);
-    });
-});
-                    /////////////////////////////////
-
-fs.readdir('./commands/other/', (err, files) => {
-    if (err) return console.error(err);
-    files.forEach(file => {
-        if (!file.endsWith(".js")) return;
-        let props = require(`./commands/other/${file}`);
-        let commandName = file.split(".")[0];
-        console.log(`Loading command ${commandName}`);
-        client.commands.set(commandName, props);
-    });
-});
-                    /////////////////////////////////
-
-fs.readdir('./commands/support/', (err, files) => {
-    if (err) return console.error(err);
-    files.forEach(file => {
-        if (!file.endsWith(".js")) return;
-        let props = require(`./commands/support/${file}`);
-        let commandName = file.split(".")[0];
-        console.log(`Loading command ${commandName}`);
-        client.commands.set(commandName, props);
-    });
-});
-                    /////////////////////////////////
-
-fs.readdir('./commands/test/', (err, files) => {
-    if (err) return console.error(err);
-    files.forEach(file => {
-        if (!file.endsWith(".js")) return;
-        let props = require(`./commands/test/${file}`);
-        let commandName = file.split(".")[0];
-        console.log(`Loading command ${commandName}`);
-        client.commands.set(commandName, props);
-    });
-});
-                    /////////////////////////////////
-
-fs.readdir('./commands/image/', (err, files) => {
-    if (err) return console.error(err);
-    files.forEach(file => {
-        if (!file.endsWith(".js")) return;
-        let props = require(`./commands/image/${file}`);
-        let commandName = file.split(".")[0];
-        console.log(`Loading command ${commandName}`);
-        client.commands.set(commandName, props);
-    });
-});
-                    /////////////////////////////////
-
-fs.readdir('./commands/fun/', (err, files) => {
-    if (err) return console.error(err);
-    files.forEach(file => {
-        if (!file.endsWith(".js")) return;
-        let props = require(`./commands/fun/${file}`);
-        let commandName = file.split(".")[0];
-        console.log(`Loading command ${commandName}`);
-        client.commands.set(commandName, props);
-    });
-});
-                    /////////////////////////////////
-
-fs.readdir('./commands/utility/', (err, files) => {
-    if (err) return console.error(err);
-    files.forEach(file => {
-        if (!file.endsWith(".js")) return;
-        let props = require(`./commands/utility/${file}`);
-        let commandName = file.split(".")[0];
-        console.log(`Loading command ${commandName}`);
-        client.commands.set(commandName, props);
-    });
-});
-                    /////////////////////////////////
-
-fs.readdir('./events/', (err, files) => {
-    if (err) return console.error(err);
-    files.forEach(file => {
-        const event = require(`./events/${file}`);
-        let eventName = file.split(".")[0];
-        console.log(`Loading event ${eventName}`);
-        client.on(eventName, event.bind(null, client));
-    });
-	
-});
+for (const file of player) {
+    console.log(`Loading discord-player event ${file}`);
+    const event = require(`./player/${file}`);
+    client.player.on(file.split(".")[0], event.bind(null, client));
+};
                     /////////////////////////////////
 
 /*fs.readdir('./events/giveaways/', (err, files) => {
