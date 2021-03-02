@@ -121,23 +121,28 @@ client.on("guildDelete", guild => {
 
 
                     ///////////////////////////////////////////////////////////////////////////////////////////////////
-
-const events = fs.readdirSync('./events').filter(file => file.endsWith('.js'));
-const zlayer = fs.readdirSync('./player').filter(file => file.endsWith('.js'));
-
-for (const file of events) {
-    console.log(`Loading discord.js event ${file}`);
-    const event = require(`./events/${file}`);
-    client.on(file.split(".")[0], event.bind(null, client));
-};
-
-for (const file of zlayer) {
-    console.log(`Loading discord-player event ${file}`);
-    const event = require(`./player/${file}`);
-    client.zlayer.on(file.split(".")[0], event.bind(null, client));
-};
                     ///////////////////////////////////////////////////////////////////////////////////////////////////
                     ///////////////////////////////////////////////////////////////////////////////////////////////////
+
+fs.readdir('./player/', (err, files) => {
+    if (err) return console.error(err);
+    files.forEach(file => {
+        const event = require(`./player/${file}`);
+        let eventName = file.split(".")[0];
+        console.log(`Loading player event ${eventName}`);
+        client.player.on(eventName, event.bind(null, client));
+    });
+                    /////////////////////////////////
+
+	fs.readdir('./events/', (err, files) => {
+    if (err) return console.error(err);
+    files.forEach(file => {
+        const event = require(`./events/${file}`);
+        let eventName = file.split(".")[0];
+        console.log(`Loading player event ${eventName}`);
+        client.player.on(eventName, event.bind(null, client));
+    });
+		                    /////////////////////////////////
 
 fs.readdir('./commands/info/', (err, files) => {
     if (err) return console.error(err);
