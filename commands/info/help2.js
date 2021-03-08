@@ -30,16 +30,20 @@ module.exports.run = async (bot, message, args) => {
 			)
 			.addField(
 				"**:musical_note:Music**",
-				"`play`, `stop`, `skip`, `queue`, `autoplay`, `loop`, `volume`, `pause`, `resume`"
+				"`play`,`join`,`pause`, `resume`, `queue`, `clear-queue/cq`, `shuffle`, `np`, `loop`, `volume`, `skip`, `stop/left/leave`, `filter`, `filters`, `enable-filters`"
 			)
+		        .addField(
+				"**Music Filters**",
+				"`bassboost`, `8D`, `vaporwave`, `nightcore`, `phaser`, `tremolo`, `vibrato`, `reverse`, `treble`, `normalizer`, `surrounding`, `pulsator`, `subboost`, `karaoke`, `flanger`, `gate`, `haas`, `mcompand`"
+		        )
 			.addField(
 				"**🛠️Moderation**",
-				"`addrole`, `ban`, `clear`, `clearwarn`, `createchannel`, `createemoji`, `kick`, `lockchannel`, `mute`, `rename`, `slowmode`, `unban`, `unlockchannel`, `unmute`, `warn`, `warnings`"
+				"`ban`, `createemoji`, `kick`, `lockchannel`, `slowmode`, `unban`, `unlockchannel`, `clear/purge`"
 			)
-			.addField(
+			/*.addField(
 				"**:underage:NSFW**",
 				"`4knsfw`, `anal`, `ass`, `hentai`, `holo`, `pussy`, `porn`, `spank`, `urban`"
-			)
+			)*/
 			.addField("**:gear:Custom Function**", "`setprefix`")
 			.setFooter(
 				`HAPPY | This command requested by ${message.author.username}#${message.author.discriminator}`
