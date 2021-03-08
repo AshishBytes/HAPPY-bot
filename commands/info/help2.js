@@ -13,7 +13,7 @@ module.exports.run = async (bot, message, args) => {
 			)
 			.addField("**📱Basic**", "`help`, `ping`, `vote`, `uptime`, `stats`")
 			.addField(
-				"**⚙utility**",
+				"**<a:utility:818344477319757835>utility**",
 				"`aes256`,`deaes256`, `embed`, `enlarge`, `timer`, `translate`, `weather`"
 			)
 			.addField(
@@ -33,7 +33,7 @@ module.exports.run = async (bot, message, args) => {
 				"`play`,`join`,`pause`, `resume`, `queue`, `clear-queue/cq`, `shuffle`, `np`, `loop`, `volume`, `skip`, `stop/left/leave`, `filter`, `filters`, `enable-filters`"
 			)
 		        .addField(
-				"**Music Filters**",
+				"**<:headphone:818345364544815105>Music Filters**",
 				"`bassboost`, `8D`, `vaporwave`, `nightcore`, `phaser`, `tremolo`, `vibrato`, `reverse`, `treble`, `normalizer`, `surrounding`, `pulsator`, `subboost`, `karaoke`, `flanger`, `gate`, `haas`, `mcompand`"
 		        )
 			.addField(
@@ -45,11 +45,11 @@ module.exports.run = async (bot, message, args) => {
 				"`4knsfw`, `anal`, `ass`, `hentai`, `holo`, `pussy`, `porn`, `spank`, `urban`"
 			)*/
 		        .addField(
-				"*Support*",
+				"**<:support:818346026124443660>Support**",
 				"`support`,`server`,`invite`"
 		        )
                         .addField(
-                               "**Other**",
+                               "**<a:dots:818345628357754930>Other**",
                                "`createinvite`, `ping`"
                         )
 			.setFooter(
