@@ -11,10 +11,10 @@ module.exports.run = async (bot, message, args) => {
 			.setDescription(
 				"**prefix** `~`\nMore Info please visit: [Here](https://top.gg/bot/810825174990454794) and invite me to your server."
 			)
-			.addField("**📱Basic**", "`help`, `ping`, `vote`, `uptime`")
+			.addField("**📱Basic**", "`help`, `ping`, `vote`, `uptime`, `stats`")
 			.addField(
 				"**⚙utility**",
-				"`aes256`, `avatar`, `channel`, `embed`, `roleinfo`, `reverse`, `setafk`, `snipe`, `stats`, `timer`, `translate`, `whois`, `weather`, `youtube`"
+				"`aes256`,`deaes256`, `embed`, `enlarge`, `timer`, `translate`, `weather`"
 			)
 			.addField(
 				"**🎃Fun**",
