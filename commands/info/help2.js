@@ -44,6 +44,10 @@ module.exports.run = async (bot, message, args) => {
 				"**:underage:NSFW**",
 				"`4knsfw`, `anal`, `ass`, `hentai`, `holo`, `pussy`, `porn`, `spank`, `urban`"
 			)*/
+                        .addField(
+                               "**Other**",
+                               "`createinvite`, `ping`"
+                        )
 			.setFooter(
 				`HAPPY | This command requested by ${message.author.username}#${message.author.discriminator}`
 			);
