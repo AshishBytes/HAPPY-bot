@@ -44,6 +44,10 @@ module.exports.run = async (bot, message, args) => {
 				"**:underage:NSFW**",
 				"`4knsfw`, `anal`, `ass`, `hentai`, `holo`, `pussy`, `porn`, `spank`, `urban`"
 			)*/
+		        .addField(
+				"*Support*",
+				"`support`,`server`,`invite`"
+		        )
                         .addField(
                                "**Other**",
                                "`createinvite`, `ping`"
