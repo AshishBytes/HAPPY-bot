@@ -7,7 +7,7 @@ module.exports.run = async (bot, message, args) => {
 	if (!helpArgs[0]) {
 		const embed = new Discord.MessageEmbed()
 			.setTitle("DraconianBot Help & Commands list")
-			.setColor("GREEN")
+			.setColor("AQUA")
 			.setDescription(
 				"**prefix** `~`\nMore Info please visit: [Here](https://top.gg/bot/810825174990454794) and invite me to your server."
 			)
@@ -38,13 +38,12 @@ module.exports.run = async (bot, message, args) => {
 		        )
 			.addField(
 				"**🛠️Moderation**",
-				"`ban`, `createemoji`, `kick`, `lockchannel`, `slowmode`, `unban`, `unlockchannel`, `clear/purge`"
+				"`ban`, `clear/purge`, `createemoji`, `kick`, `lock`, `slowmode`, `unban`, `unlock`"
 			)
 			/*.addField(
 				"**:underage:NSFW**",
 				"`4knsfw`, `anal`, `ass`, `hentai`, `holo`, `pussy`, `porn`, `spank`, `urban`"
 			)*/
-			.addField("**:gear:Custom Function**", "`setprefix`")
 			.setFooter(
 				`HAPPY | This command requested by ${message.author.username}#${message.author.discriminator}`
 			);
