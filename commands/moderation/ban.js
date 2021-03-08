@@ -97,7 +97,7 @@ module.exports.run = async (client, msg, args) => {
 module.exports.help = {
   name: "ban",
   description: "This command is used for banning the members you dont like.",
-  usage: "d!ban <mentions> <reason>(optional)",
+  usage: "~ban <mentions> <reason>(optional)",
   accessableby: "Ban Members",
   aliases: [],
 };
