@@ -18,15 +18,15 @@ module.exports.run = async (bot, message, args) => {
 			)
 			.addField(
 				"**🎃Fun**",
-				"`8ball`, `cat`, `deaes256`, `kiss`, `meme`, `ngif`, `pat`, `poke`, `smug`, `spank`, `thigh`, `tickle`"
+				"`8ball`, `meme`, `poke`, `reverse`, `smug`, `tickle`"
 			)
 			.addField(
 				"**:tada:Giveaways**",
-				"`start-giveaway`, `reroll`, `end-giveaway`"
+				"`gstart`, `greroll`, `gend`"
 			)
 			.addField(
 				"**:frame_photo:Image**",
-				"`circle`, `delete`, `gay`, `changemymind`, `trigger`, `clyde`"
+				"`cat`, `changemymind`, `circle`, `clyde`, `delete`, `kiss`, `pat`, `rainbow`, `rip`, `spank`, `triggered`"
 			)
 			.addField(
 				"**:musical_note:Music**",
