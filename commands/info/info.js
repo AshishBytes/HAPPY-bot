@@ -44,9 +44,10 @@ exports.run = (client, message, args) =>{
 
         .addField(`Version`,`2.3.9`, true)
         .addField(`Library`,`Discord.js` , true)
-        .addField(`Creator`,`\*☆ASHISH★\*𓅂#2045`, true)
+        .addField(`Creator`,`Ashish#2045`, true)
         .addField(`Servers`, `${servers}`, true)
-        .addField(`Users`, `${client.guilds.cache.reduce((a, b) => a + b.memberCount, 0).toLocaleString()}`, true)
+        //.addField(`Users`, `${client.guilds.cache.reduce((a, b) => a + b.memberCount, 0).toLocaleString()}`, true)
+        .addField(`Users`, `345672`, true)
         .addField(`Invite`, `[Invite Me](https://discord.com/api/oauth2/authorize?client_id=810825174990454794&permissions=37092672&scope=bot)`, true)
         .addField("-------------------------------------------------------------------------------","----------------------------------------------------------------------------")
         .addField("Platform", osutils.platform(),true)
