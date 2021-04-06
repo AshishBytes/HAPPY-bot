@@ -1,5 +1,5 @@
 const Discord = require("discord.js");
-const { AME_API } = require('../config')
+const { AME_API } = require('./config')
 const ameClient = require('amethyste-api')
 const AmeAPI = new ameClient(AME_API)
 
