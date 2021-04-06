@@ -1,32 +1,50 @@
 const Discord = require("discord.js");
 
-module.exports.run = (client, message, args) => {
-  let avatar = message.mentions.users.size
-    ? message.mentions.users
-        .first()
-        .avatarURL({ format: "png", dynamic: true, size: 2048 })
-    : message.author.avatarURL({ format: "png", dynamic: true, size: 2048 });
-  if (message.mentions.users.size > 0) {
-    const embed = new Discord.MessageEmbed()
-      .setColor("AQUA")
-      .setTitle(`Avatar for ${message.mentions.users.first().username}:`)
-      .setImage(`${avatar}`);
+module.exports.run = async (client, message, args) => {
+    let user = message.mentions.members.first() || message.guild.members.cache.get(args[0]) || message.guild.members.cache.find(r => r.user.username.toLowerCase() === args.join(' ').toLocaleLowerCase()) || message.guild.members.cache.find(r => r.displayName.toLowerCase() === args.join(' ').toLocaleLowerCase()) || message.member;
 
-    message.channel.send({ embed });
-  } else {
-    const embed = new Discord.MessageEmbed()
-      .setColor("AQUA")
-      .setTitle(`Avatar for ${message.author.username}:`)
-      .setImage(`${avatar + "?size=2048"}`);
+    if (args[0]) {
+      message.channel.send({
+        embed: {
 
-    message.channel.send({ embed });
+          title: `${user.user.username}'s Avatar`,
+
+          color: 0xFFEFD5,
+
+          image: {
+            url: `${user.user.displayAvatarURL({dynamic: true})}` + '?size=4096'
+          },
+
+          timestamp: new Date(),
+
+          footer: {
+            text: message.guild.name,
+            icon_url: message.guild.iconURL()
+          }
+        }
+      })
+    }
+    else if (!args[0]) {
+      message.channel.send({
+        embed: {
+
+          title: `${user.user.username}'s Avatar`,
+
+          color: 0xFFEFD5,
+
+          image: {
+            url: `${user.user.displayAvatarURL({ dynamic: true })}` + '?size=4096'
+          },
+
+          timestamp: new Date(),
+
+          footer: {
+            text: message.guild.name,
+            icon_url: message.guild.iconURL()
+          }
+
+        }
+      })
+    }
   }
-};
-
-module.exports.help = {
-  name: "avatar",
-  description: "This command is used for showing your/other member's avatar.",
-  usage: "d!avatar <mentions>(optional)",
-  accessableby: "Member",
-  aliases: [],
-};
+}
