@@ -32,7 +32,7 @@ client.on("message", async message => {
         if (message.content.includes(client.user.id)) { //if message contains musicium as a ping
         return message.reply(new Discord.MessageEmbed().setColor("#00FFFF").setAuthor(`${message.author.username}, My Prefix is ${prefix}, to get started; type ${prefix}help`, message.author.displayAvatarURL({ dynamic: true }),"https://top.gg/bot/810825174990454794"));
     } 
-    else if (command === "prefix") {
+        if (command === "prefix") {
 
         let prefix = await db.get(`prefix_${message.guild.id}`)
 
@@ -52,7 +52,6 @@ client.on("message", async message => {
 
         return embedbuilder(client, message, "#fffff0", "PREFIX", `✅ Successfully set new prefix to **\`${args[0]}\`**`)
     }
-}
                     /////////////////////////////////
 
 if (!db.get("giveaways")) db.set("giveaways", []);
