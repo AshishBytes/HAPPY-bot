@@ -83,14 +83,14 @@ const GiveawayManagerWithOwnDatabase = class extends GiveawaysManager {
 // Create a new instance of your new class
 const manager = new GiveawayManagerWithOwnDatabase(client, {
   storage: false, // Important - use false instead of a storage path
-  updateCountdownEvery: 10000,
+  updateCountdownEvery: 3000,
   endedGiveawaysLifetime: 30000,
   hasGuildMembersIntent: false,
   default: {
     botsCanWin: false,
     exemptPermissions: ["MANAGE_MESSAGES", "ADMINISTRATOR"],
-    embedColor: "#ff6969",
-    embedColorEnd: "#505050",
+    embedColor: "#00FFFF",
+    embedColorEnd: "#32fbaa",
     reaction: "🎉",
   },
 });
