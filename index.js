@@ -36,7 +36,7 @@ client.on("message", async message => {
 
         let prefix = await db.get(`prefix_${message.guild.id}`)
 
-        if (prefix === null) prefix = config.PREFIX;
+        if (prefix === null) prefix = config.prefix;
 
         message.react("✅");
 
