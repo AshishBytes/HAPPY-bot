@@ -29,8 +29,28 @@ client.aliases = new discord.Collection();
 client.snipes = new Map();
                     /////////////////////////////////
 
-    if (message.content.includes(client.user.id)) { //if message contains musicium as a ping
-       return message.reply(new Discord.MessageEmbed().setColor("#00FFFF").setAuthor(`${message.author.username}, My Prefix is ${prefix}, to get started; type ${prefix}help`, message.author.displayAvatarURL({ dynamic: true }),"https://top.gg/bot/810825174990454794"));
+        if (message.content.includes(client.user.id)) { //if message contains musicium as a ping
+        return message.reply(new Discord.MessageEmbed().setColor("#00FFFF").setAuthor(`${message.author.username}, My Prefix is ${prefix}, to get started; type ${prefix}help`, message.author.displayAvatarURL({ dynamic: true }),"https://top.gg/bot/810825174990454794"));
+    } 
+    else if (command === "prefix") {
+
+        let prefix = await db.get(`prefix_${message.guild.id}`)
+
+        if (prefix === null) prefix = config.PREFIX;
+
+        message.react("✅");
+
+        if (!args[0]) return embedbuilder(client, message, "RED", "Current Prefix: \`${prefix}\`", `Please provide a new prefix`)
+
+
+        if (!message.member.hasPermission("ADMINISTRATOR")) return embedbuilder(client, message, "RED", "PREFIX", `❌ You don\'t have permission for this Command!`)
+
+
+        if (args[1]) return embedbuilder(client, message, "RED", "PREFIX", `'❌ The prefix can\'t have two spaces'`)
+
+        db.set(`prefix_${message.guild.id}`, args[0])
+
+        return embedbuilder(client, message, "#fffff0", "PREFIX", `✅ Successfully set new prefix to **\`${args[0]}\`**`)
     }
                     /////////////////////////////////
 
