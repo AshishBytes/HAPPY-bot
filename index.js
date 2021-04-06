@@ -52,6 +52,7 @@ client.on("message", async message => {
 
         return embedbuilder(client, message, "#fffff0", "PREFIX", `✅ Successfully set new prefix to **\`${args[0]}\`**`)
     }
+});
                     /////////////////////////////////
 
 if (!db.get("giveaways")) db.set("giveaways", []);
