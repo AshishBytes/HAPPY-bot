@@ -28,7 +28,7 @@ client.commands = new discord.Collection();
 client.aliases = new discord.Collection();
 client.snipes = new Map();
                     /////////////////////////////////
-
+client.on("message", async message => {
         if (message.content.includes(client.user.id)) { //if message contains musicium as a ping
         return message.reply(new Discord.MessageEmbed().setColor("#00FFFF").setAuthor(`${message.author.username}, My Prefix is ${prefix}, to get started; type ${prefix}help`, message.author.displayAvatarURL({ dynamic: true }),"https://top.gg/bot/810825174990454794"));
     } 
