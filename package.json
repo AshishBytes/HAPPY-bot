@@ -11,6 +11,7 @@
     "@discordjs/opus": "^0.3.3",
     "discord-player": "^3.4.0",
     "twemoji-parser": "^13.0.0",
+    "relevant-urban": "^2.0.0",
     "discord.js": "^12.5.3",
     "weather-js": "^2.0.0",
     "canvacord": "^5.1.0",
