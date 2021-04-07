@@ -27,7 +27,7 @@ message.channel.send(NoArgs).then(m => m.delete(5000));
 }
 
 const NoAmount = new Discord.MessageEmbed()
-.setDescription(`Choose a number between \`1\` - \`100\` to clear from **${user.user.tag}** in ${message.channel}`)
+.setDescription(`Choose a number between \`1\` - \`100\` to clear from **${user.tag}** in ${message.channel}`)
 .setColor("AQUA")
 .setAuthor(`| ${client.user.tag}`, client.user.displayAvatarURL)
 .setFooter("HAPPY")
@@ -63,14 +63,14 @@ message.channel.fetchMessages({
 });
   
 const Done = new Discord.MessageEmbed() //Creating the embed
-.setDescription(`\`${args[1]}\` messages have been pruned from **${user.user.tag}** in ${message.channel}`) //Setting the description
+.setDescription(`\`${args[1]}\` messages have been pruned from **${user.tag}** in ${message.channel}`) //Setting the description
 .setColor("AQUA") //Setting the color
 .setAuthor(`| ${client.user.tag}`, client.user.displayAvatarURL) //Setting the title
 .setFooter("HAPPY") //Setting the footer
 
 const LogsMsg = new Discord.MessageEmbed()
 .setAuthor(`| ${client.user.tag }`, client.user.displayAvatarURL)
-.setDescription(`**User** ${user.user.tag}\n**Amount** ${args[1]}\n**Reason** ${reason}\n**Moderator** ${message.author.tag}\n**Channel** ${message.channel}\n**At** ${moment(message.createdAt).format("lll", Date.now())}`)
+.setDescription(`**User** ${user.tag}\n**Amount** ${args[1]}\n**Reason** ${reason}\n**Moderator** ${message.author.tag}\n**Channel** ${message.channel}\n**At** ${moment(message.createdAt).format("lll", Date.now())}`)
 .setColor("AQUA")
 .setFooter("HAPPY")
 
