@@ -8,7 +8,7 @@ message.delete();
 const Error = new Discord.MessageEmbed()
 .setAuthor(`| ${client.user.tag}`, client.user.displayAvatarURL)
 .setDescription("You do not have the authorization to operate this command.")
-.setColor(ops.color)
+.setColor("AQUA")
 .setFooter("HAPPY")
   
 if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send(Error).then(m => m.delete(5000))
@@ -18,7 +18,7 @@ const user = message.mentions.users.first() || message.guild.members.get(args[0]
   
 const NoArgs = new Discord.MessageEmbed()
 .setDescription("~prune [UserID] [#]")
-.setColor(ops.color)
+.setColor("AQUA")
 .setAuthor(`| ${client.user.tag}`, client.user.displayAvatarURL)
 .setFooter("HAPPY")
 
@@ -28,7 +28,7 @@ message.channel.send(NoArgs).then(m => m.delete(5000));
 
 const NoAmount = new Discord.MessageEmbed()
 .setDescription(`Choose a number between \`1\` - \`100\` to clear from **${user.user.tag}** in ${message.channel}`)
-.setColor(ops.color)
+.setColor("AQUA")
 .setAuthor(`| ${client.user.tag}`, client.user.displayAvatarURL)
 .setFooter("HAPPY")
   
@@ -64,14 +64,14 @@ message.channel.fetchMessages({
   
 const Done = new Discord.MessageEmbed() //Creating the embed
 .setDescription(`\`${args[1]}\` messages have been pruned from **${user.user.tag}** in ${message.channel}`) //Setting the description
-.setColor(ops.color) //Setting the color
+.setColor("AQUA") //Setting the color
 .setAuthor(`| ${client.user.tag}`, client.user.displayAvatarURL) //Setting the title
 .setFooter("HAPPY") //Setting the footer
 
 const LogsMsg = new Discord.MessageEmbed()
 .setAuthor(`| ${client.user.tag }`, client.user.displayAvatarURL)
 .setDescription(`**User** ${user.user.tag}\n**Amount** ${args[1]}\n**Reason** ${reason}\n**Moderator** ${message.author.tag}\n**Channel** ${message.channel}\n**At** ${moment(message.createdAt).format("lll", Date.now())}`)
-.setColor(ops.color)
+.setColor("AQUA")
 .setFooter("HAPPY")
 
 let LogsChan = message.guild.channels.find(c => c.name == "message-reports") //Searching for the channel
