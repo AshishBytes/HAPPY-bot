@@ -1,10 +1,7 @@
 const Discord = require('discord.js')
 
 
-module.exports = {
-    name: 'purge',
-    description: 'Purge up to 99 messages.',
-    execute(message, args) {
+module.exports.run = (message, args) => {
         console.log("purging messages")
 
         const amount = parseInt(args[0]) + 1;
