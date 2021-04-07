@@ -13,7 +13,7 @@ const Error = new Discord.MessageEmbed()
   
 if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send(Error).then(m => m.delete(5000))
   
-const user = message.mentions.users.first() || message.guild.members.get(args[0]);
+const user = message.mentions.users.first() || message.guild.members.cache.get(args[0]);
 // Parse Amount
   
 const NoArgs = new Discord.MessageEmbed()
