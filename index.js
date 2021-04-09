@@ -30,7 +30,7 @@ client.snipes = new Map();
                     /////////////////////////////////
 
 client.on('message', async message => {
-if(message.content.match(new RegExp(`${client.user.id}`))) 
+if(message.content.match(new RegExp(`^<@!?${bot.user.id}>( |)$`))) 
 return message.inlineReply(new discord.MessageEmbed().setColor("#00FFFF").setAuthor(`${message.author.username}, My Prefix is ~, to get started; type ~help`, message.author.displayAvatarURL({ dynamic: true }),"https://top.gg/bot/810825174990454794"));
 })
                     /////////////////////////////////
