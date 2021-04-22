@@ -10,6 +10,10 @@ require("./ExtendedMessage");
 let nz_date_string = new Date().toLocaleString("en-US", {
   timeZone: "Asia/Kolkata",
 });
+const express = require("express");
+const app = express();
+require('./music.js');
+
 client.mapss = new Map();
 client.mapss.set("uptimedate", nz_date_string);
 const player = new Player(client, {
@@ -26,11 +30,11 @@ client.emotes = require('./config/emojis.json');
 client.filters = require('./config/filters.json');
 client.commands = new discord.Collection();
 client.aliases = new discord.Collection();
-client.snipes = new Map();
+client.snipes = new discord.Collection();
                     /////////////////////////////////
 
 client.on('message', async message => {
-if(message.content.match(new RegExp(`^<@!?${bot.user.id}>( |)$`))) 
+if(message.content.match(new RegExp(`${client.user.id}`))) 
 return message.inlineReply(new discord.MessageEmbed().setColor("#00FFFF").setAuthor(`${message.author.username}, My Prefix is ~, to get started; type ~help`, message.author.displayAvatarURL({ dynamic: true }),"https://top.gg/bot/810825174990454794"));
 })
                     /////////////////////////////////
@@ -153,17 +157,6 @@ client.on("guildDelete", guild => {
 
                     /////////////////////////////////
 
-fs.readdir('./player/', (err, files) => {
-    if (err) return console.error(err);
-    files.forEach(file => {
-        const event = require(`./player/${file}`);
-        let eventName = file.split(".")[0];
-        console.log(`Loading player event ${eventName}`);
-        client.player.on(eventName, event.bind(null, client));
-    });
-});
-                    /////////////////////////////////
-
 fs.readdir('./commands/', (err, files) => {
     if (err) return console.error(err);
     files.forEach(file => {
@@ -209,18 +202,6 @@ fs.readdir('./commands/moderation/', (err, files) => {
         client.commands.set(commandName, props);
     });
 }); 
-                    /////////////////////////////////
-
-fs.readdir('./commands/music/', (err, files) => {
-    if (err) return console.error(err);
-    files.forEach(file => {
-        if (!file.endsWith(".js")) return;
-        let props = require(`./commands/music/${file}`);
-        let commandName = file.split(".")[0];
-        console.log(`Loading command ${commandName}`);
-        client.commands.set(commandName, props);
-    });
-});
                     /////////////////////////////////
 
 fs.readdir('./commands/other/', (err, files) => {
