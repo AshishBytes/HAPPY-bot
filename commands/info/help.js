@@ -18,7 +18,7 @@ module.exports.run = async (bot, message, args) => {
 			)
 			.addField(
 				"**🎃Fun**",
-				"`8ball`, `meme`, `poke`, `reverse`, `smug`, `tickle`"
+				"`8ball`, `meme`, `poke`, `reverse`, `smug`, `tickle`, `math`"
 			)
 			.addField(
 				"**:tada:Giveaways**",
@@ -26,11 +26,15 @@ module.exports.run = async (bot, message, args) => {
 			)
 			.addField(
 				"**:frame_photo:Image**",
-				"`cat`, `changemymind`, `circle`, `clyde`, `delete`, `kiss`, `pat`, `rainbow`, `rip`, `spank`, `triggered`"
+				"`cat`, `changemymind`, `circle`, `clyde`, `delete`, `kiss`, `pat`, `rainbow`, `rip`, `spank`, `triggered`, `captcha`, `phcomment`, `tweet`"
+			)
+    	.addField(
+				"**:star_struck:Info**",
+				"`avatar`, `channelinfo`, `help`, `info`, `roleinfo`, `sendimage`, `serverinfo`, `stats`, `uptime`, `whois`"
 			)
 			.addField(
 				"**:musical_note:Music**",
-				"`play`,`join`,`pause`, `resume`, `queue`, `clear-queue/cq`, `shuffle`, `np`, `loop`, `volume`, `skip`, `stop/left/leave`, `filter`, `filters`, `enable-filters`"
+				"`Radio`,`search`,`status`, `np, `pause`, `resume`, `shuffle`, `lyrics`, `play`, `skip`, `autoplay`, `playskip`, `stop`, `seek`, `volume`, `queue`, `loop`, `jump`, `filter`, `filters`"
 			)
 		        .addField(
 				"**<:headphone:818345364544815105>Music Filters**",
@@ -44,13 +48,13 @@ module.exports.run = async (bot, message, args) => {
 				"**:underage:NSFW**",
 				"`4knsfw`, `anal`, `ass`, `hentai`, `holo`, `pussy`, `porn`, `spank`, `urban`"
 			)*/
-		        .addField(
+		  .addField(
 				"**<:support:818346026124443660>Support**",
 				"`support`,`server`,`invite`"
 		        )
-                        .addField(
-                               "**<a:dots:818345628357754930>Other**",
-                               "`createinvite`, `ping`"
+      .addField(
+        "**<a:dots:818345628357754930>Other**",
+        "`createinvite`, `ping`"
                         )
 			.setFooter(
 				`HAPPY | This command requested by ${message.author.username}#${message.author.discriminator}`
