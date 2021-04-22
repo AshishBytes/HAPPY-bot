@@ -3,7 +3,6 @@ const Enmap = require("enmap");
 const db = require("quick.db");
 const discord = require('discord.js');
 const client = new discord.Client({ disableMentions: 'everyone' });
-const { Player } = require('discord-player');
 const { GiveawaysManager } = require("discord-giveaways");
 const cooldowns = new discord.Collection();
 require("./ExtendedMessage");
@@ -16,15 +15,6 @@ require('./music.js');
 
 client.mapss = new Map();
 client.mapss.set("uptimedate", nz_date_string);
-const player = new Player(client, {
-	leaveOnEnd: true,
-	leaveOnStop: true,
-	leaveOnEmpty: false,
-	timeout: 120000,
-        volume: 150,
-        quality: 'high',
-});
-client.player = player;
 client.config = require('./config/bot.json');
 client.emotes = require('./config/emojis.json');
 client.filters = require('./config/filters.json');
