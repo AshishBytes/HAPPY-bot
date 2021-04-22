@@ -34,7 +34,7 @@ module.exports.run = async (bot, message, args) => {
 			)
 			.addField(
 				"**:musical_note:Music**",
-				"`Radio`,`search`,`status`, `np, `pause`, `resume`, `shuffle`, `lyrics`, `play`, `skip`, `autoplay`, `playskip`, `stop`, `seek`, `volume`, `queue`, `loop`, `jump`, `filter`, `filters`"
+				"`Radio`,`search`,`status`, `np`, `pause`, `resume`, `shuffle`, `lyrics`, `play`, `skip`, `autoplay`, `playskip`, `stop`, `seek`, `volume`, `queue`, `loop`, `jump`, `filter`, `filters`"
 			)
 		        .addField(
 				"**<:headphone:818345364544815105>Music Filters**",
