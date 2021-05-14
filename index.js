@@ -98,7 +98,7 @@ client.giveawaysManager = manager;
 
                     /////////////////////////////////
 
-client.on('guildCreate', guild => {
+/*client.on('guildCreate', guild => {
     //console.log(`New guild joined: ${guild.name} (id: ${guild.id}). This guild has ${guild.memberCount} members!`);
     client.channels.cache.get("828985803178901544").send(`New guild joined: ${guild.name} (id: ${guild.id}). This guild has ${guild.memberCount} members!`);
 });
@@ -108,7 +108,7 @@ client.on("guildDelete", guild => {
     // this event triggers when the bot is removed from a guild.
     //console.log(`I have been removed from: ${guild.name} (id: ${guild.id})`);
     client.channels.cache.get("828985803178901544").send(`I have been removed from: ${guild.name} (id: ${guild.id})`);
-});
+});*/
 
 
 
