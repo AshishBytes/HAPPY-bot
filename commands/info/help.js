@@ -50,7 +50,7 @@ module.exports.run = async (bot, message, args) => {
 			)*/
 		  .addField(
 				"**<:support:818346026124443660>Support**",
-				"`support`,`server`,`invite`"
+				"`support`,`server`,`invite`,`vote`"
 		        )
       .addField(
         "**<a:dots:818345628357754930>Other**",
