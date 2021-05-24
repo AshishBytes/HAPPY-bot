@@ -15,9 +15,7 @@ require('./music.js');
 
 client.mapss = new Map();
 client.mapss.set("uptimedate", nz_date_string);
-client.config = require('./config/bot.json');
-client.emotes = require('./config/emojis.json');
-client.filters = require('./config/filters.json');
+client.config = require('./config.json');
 client.commands = new discord.Collection();
 client.aliases = new discord.Collection();
 client.snipes = new discord.Collection();
@@ -98,17 +96,54 @@ client.giveawaysManager = manager;
 
                     /////////////////////////////////
 
-/*client.on('guildCreate', guild => {
-    //console.log(`New guild joined: ${guild.name} (id: ${guild.id}). This guild has ${guild.memberCount} members!`);
-    client.channels.cache.get("828985803178901544").send(`New guild joined: ${guild.name} (id: ${guild.id}). This guild has ${guild.memberCount} members!`);
+client.on('guildCreate', guild => {
+    try{
+    const server = client.guilds.cache.get(`${client.config.System_server}`)
+    const channel = server.channels.cache.get(`${client.config.Bot_join}`)
+    const joinEmbed = new discord.MessageEmbed()
+    .setDescription("HAPPY was added to a server")
+    .setTitle("Joined")
+    .setColor("AQUA")
+    .setThumbnail(`${client.config.Bot_avatar}`)
+    .setTimestamp()
+	  .setFooter('HAPPY', `${client.config.Bot_avatar}`)
+    .addFields(
+            { name: 'Name', value: guild.name, inline: false },
+            { name: 'GuildId', value: guild.id,inline: false },
+            { name: 'Guild OwnerId', value: guild.ownerID, inline: false },
+            { name: 'Member Count', value: guild.memberCount, inline: false },
+            { name: 'Total Guilds', value: client.guilds.cache.size, inline: true },
+        )
+        channel.send(joinEmbed)
+    }catch(error){
+        console.log("There was an error sending join embed to channel")
+    }
 });
-                    /////////////////////////////////
 
-client.on("guildDelete", guild => {
-    // this event triggers when the bot is removed from a guild.
-    //console.log(`I have been removed from: ${guild.name} (id: ${guild.id})`);
-    client.channels.cache.get("828985803178901544").send(`I have been removed from: ${guild.name} (id: ${guild.id})`);
-});*/
+client.on('guildDelete', guild => {
+    try{
+    const server = client.guilds.cache.get(`${client.config.System_server}`)
+    const channel = server.channels.cache.get(`${client.config.Bot_leave}`)
+    const leaveEmbed = new discord.MessageEmbed()
+    .setDescription("HAPPY was removed from a server")
+    .setTitle("Removed")
+    .setColor("AQUA")
+    .setThumbnail(`${client.config.Bot_avatar}`)
+    .setTimestamp()
+	  .setFooter('HAPPY', `${client.config.Bot_avatar}`)
+    .addFields(
+        { name: 'Name', value: guild.name, inline: false },
+        { name: 'GuildId', value: guild.id,inline: false },
+        { name: 'Guild OwnerId', value: guild.ownerID, inline: false },
+        { name: 'Member Count', value: guild.memberCount, inline: false },
+        { name: 'Total Guilds', value: client.guilds.cache.size, inline: true },
+    )
+    channel.send(leaveEmbed)
+    }catch(error){
+        console.log("There was an error sending leave embed to channel.")
+    }
+    
+  });
 
 
 
@@ -289,4 +324,4 @@ fs.readdir('./events/', (err, files) => {
 });*/
 	            /////////////////////////////////
 
-client.login(client.config.token_bot);
+client.login(client.config.bot_token);
