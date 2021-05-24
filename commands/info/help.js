@@ -6,7 +6,7 @@ module.exports.run = async (bot, message, args) => {
 
 	if (!helpArgs[0]) {
 		const embed = new Discord.MessageEmbed()
-			.setTitle("DraconianBot Help & Commands list")
+			.setTitle("HAPPY Bot Help & Commands list")
 			.setColor("AQUA")
 			.setDescription(
 				"**prefix** `~`\nMore Info please visit: [Here](https://top.gg/bot/810825174990454794) and invite me to your server."
