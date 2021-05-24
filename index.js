@@ -16,6 +16,7 @@ require('./music.js');
 client.mapss = new Map();
 client.mapss.set("uptimedate", nz_date_string);
 client.config = require('./config.json');
+client.emotes = require('./config/emojis.json');
 client.commands = new discord.Collection();
 client.aliases = new discord.Collection();
 client.snipes = new discord.Collection();
