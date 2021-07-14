@@ -55,7 +55,7 @@
   ////////////////////////////
   module.exports = async function (client, message, args) {
     let prefix = await db.get(`prefix_${message.guild.id}`)
-    if(prefix === null) prefix = "~";
+    if(prefix === null) prefix = client.config.prefix;
 
     //define the No args Embed, lmao
     let resultsEmbed = new Discord.MessageEmbed()
