@@ -6,11 +6,7 @@ const db = require('quick.db');
 const { getLyrics } = require('genius-lyrics-api');
 const DisTube = require("distube");
 const radio = require("./radio");
-const config = {
-    PREFIX: "~",
-    token: "ODEwODI1MTc0OTkwNDU0Nzk0.YCpRyg.s2PNyPj-SR5hIc3BQztC3HNf4WI",
-    geniusapi: ''
-}
+client.config = require('./config/config.json');
 const client = new Discord.Client({ disableMentions: "all" });
 const distube = new DisTube(client, {
     youtubeCookie: "",
@@ -78,7 +74,7 @@ const filters = [
 /////////////////
 //////Events/////
 /////////////////
-client.login(config.token); //start the bot
+client.login(config.bot_token); //start the bot
 //log when ready and status
 client.on("ready", () => {
     console.log(` :: Bot has started as :: ${client.user.tag}`);    
@@ -89,7 +85,7 @@ client.on("message", async message => {
     if (!message.guild) return;     //if not in a guild return
     
     let prefix = await db.get(`prefix_${message.guild.id}`)//getting prefix 
-    if (prefix === null) prefix = config.PREFIX;           //if not prefix set it to standard prefix in the config.json file
+    if (prefix === null) prefix = client.config.prefix;           //if not prefix set it to standard prefix in the config.json file
     
     const args = message.content.slice(prefix.length).trim().split(/ +/g); //arguments of the content
     const command = args.shift();                                          //defining the command msgs
@@ -184,7 +180,7 @@ try{
         embedbuilder(client, message, "AQUA", "Searching!").then(msg => msg.delete({timeout: 5000}).catch(console.error));
 
         const options = {
-            apiKey: config.geniusapi,
+            apiKey: client.config.geniusapi,
             title: cursong.name,
             artist: cursong.info.videoDetails.author.name,
             optimizeQuery: true
