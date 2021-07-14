@@ -4,7 +4,7 @@ module.exports = async (client) => {
     client.user.setPresence({
         status: "idle",  //You can show online, idle....
         activity: {
-            name: "~help",  //The message shown
+            name: ".help",  //The message shown
             type: "LISTENING" //PLAYING: WATCHING: LISTENING: STREAMING:
         }
     });
