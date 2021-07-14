@@ -1,5 +1,5 @@
 {
-    "bot_token": "test",
+    "bot_token": "",
     "status": "~help",
     "prefix": "~",
     "Color": "AQUA",
